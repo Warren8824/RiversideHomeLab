@@ -35,11 +35,11 @@ riverside-lab/
 ├── README.md                                       # This file
 ├── documentation/                                  # Core setup documentation
 │   ├── images/                                     # Visual network layout and config images - Linked throughout
-│   ├── environment-setup.md                        # Step-by-step lab build guide
 |   |   ├── DC01Creation.png
 |   |   └── VSwitches.png etc.
-│   ├── ip-addressing-scheme.md                     # IP/subnet breakdown
+│   ├── environment-setup.md                        # Step-by-step lab build guide
 |   ├── hardware-specs.md                           # Lab host machine details
+│   ├── ip-addressing-scheme.md                     # IP/subnet breakdown
 |   ├── Riverside Physical Topology.drawio.png      # Physical Diagram of what I intend the Lab to simulate
 │   └── Riverside Virtual Topology.drawio.png       # Visual Description of the Hyper V Setup used
 ├── active-directory/                               # AD setup and scripts
