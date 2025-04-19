@@ -1,104 +1,90 @@
-# Riverside Manufacturing Hyper-V Lab Environment
+# Riverside Lab 🖥️🌐
 
-## Overview
-This document describes the current Windows Server 2019 Hyper-V lab environment that simulates a multi-site network for Riverside Manufacturing. This lab will be used to develop and demonstrate core IT administration skills.
+This repository documents my self-built Hyper-V home lab environment — a multi-site Active Directory setup designed to simulate real-world IT infrastructure. 
 
-## Lab Environment Specifications
+The purpose of this lab is to deepen my understanding of Windows Server administration, networking fundamentals, Active Directory, DHCP/DNS configuration, GPOs, and IT helpdesk-related tasks. I'm currently working in a helpdesk role, and I'm using this time to reinforce my hands-on knowledge with solid examples and a documented setup.
 
-### Recommended Host System
-- **Operating System**: Windows 10/11 Pro (or Windows Server 2019)
-- **CPU**: Intel/AMD with virtualization support
-- **RAM**: 16GB or higher (recommended)
-- **Storage**: 500GB SSD or higher
-- **Network**: Single physical adapter with internet access
+Everything here has been self-taught, built from scratch on personal hardware, and is meant to serve as both a learning aid and a reference I can expand on over time.
 
-### Current Used Host System
-- **Operating System**: Windows 11 Pro
-- **CPU**: Intel(R) Core(TM) i5-8350U CPU @ 1.70GHz   1.90 GHz
-- **RAM**: 32GB
-- **Storage**: 500GB External SSD
-- **Network**: Intel(R) Dual Band Wireless-AC 8265
+---
 
-## Usage Scenarios
-This lab environment will be used to practice and demonstrate the following IT administration skills:
+## 🧰 What’s in the Lab?
 
-### Active Directory Management
-- [ ] Creating and managing Organizational Units (OUs)
-- [ ] Creating and managing user accounts
-- [ ] Managing security groups and distribution groups
-- [ ] Password resets and account unlocks
+This setup includes:
 
-### Group Policy Administration
-- [ ] Creating and applying GPOs
-- [ ] Configuring security settings
-- [ ] Managing software installation
-- [ ] Configuring desktop settings
+- A **Windows Server 2019 Domain Controller** running:
+  - Active Directory Domain Services
+  - DHCP & DNS roles
+  - Routing & Remote Access for multi-subnet connectivity
+- Four virtual private networks simulating separate office sites:
+  - Manchester, Leeds, Liverpool, and Hull
+- Internal NAT network for limited internet access
+- A structured domain with:
+  - OU hierarchy
+  - Security groups
+  - Test users and PowerShell automation
+- DHCP scopes, DNS zones, routing, and GPOs
+- Optional client machines for simulating common helpdesk scenarios
 
-### Network Services Management
-- [ ] DNS configuration and troubleshooting
-- [ ] DHCP scope management
-- [ ] Network routing configuration
+---
 
-### System Administration
-- [ ] Server management and monitoring
-- [ ] Event log analysis
-- [ ] Backup and recovery procedures
-- [ ] Windows Update management
+## 📁 Repository Structure
 
-## Next Steps for Lab Development
+```plaintext
+riverside-lab/
+├── README.md                      # This file
+├── documentation/                 # Core setup documentation
+│   ├── environment-setup.md       # Step-by-step lab build guide
+│   ├── network-diagram.png        # Visual network layout
+│   ├── ip-addressing-scheme.md    # IP/subnet breakdown
+│   └── hardware-specs.md          # Lab host machine details
+├── active-directory/              # AD setup and scripts
+│   ├── ou-structure.md
+│   ├── security-groups.md
+│   ├── sample-users.md
+│   └── scripts/
+│       ├── create-ou-structure.ps1
+│       ├── create-test-users.ps1
+│       └── create-security-groups.ps1
+├── group-policy/                  # GPO setup and screenshots
+│   ├── gpo-inventory.md
+│   ├── security-baseline.md
+│   └── screenshots/
+├── file-server/                   # Shared folder setup
+│   ├── folder-structure.md
+│   ├── permissions-matrix.md
+│   └── scripts/
+├── skill-journal/                 # Learning log
+│   ├── week1-active-directory.md
+│   ├── week2-group-policy.md
+│   └── helpdesk-scenarios/
+│       ├── password-reset.md
+│       ├── account-unlock.md
+│       └── group-management.md
+└── projects/                      # Mini-projects showing applied skills
+    ├── automated-onboarding/
+    ├── security-audit/
+    └── monitoring-setup/
+```
 
-### Phase 1: Active Directory Structure Implementation
-- Create organizational unit structure
-- Define security groups
-- Create test user accounts
-- Document permissions model
+## 🔍 Why This Lab?
 
-### Phase 2: Group Policy Implementation
-- Configure password policies
-- Set up desktop standardization
-- Implement security baselines
-- Configure software restrictions
+This project is more than just a test bed — it’s where I can safely explore real-world scenarios and reinforce what I’ve learned. I’m focusing on:
 
-### Phase 3: File Server Implementation
-- Add a file server VM
-- Configure shared folders
-- Set up DFS namespaces
-- Implement access controls
+Hands-on IT support skills (like account lockouts, group changes, folder permissions, etc.)
 
-### Phase 4: Monitoring and Reporting
-- Configure performance monitoring
-- Set up event log forwarding
-- Create administration reports
-- Implement alerting
+Understanding domain environments
 
-## Appendices
+Practicing automation with PowerShell
 
-### Implementation Checklist
-- [x] Virtual network configuration
-- [x] Domain controller installation
-- [x] DNS configuration
-- [x] DHCP configuration
-- [x] Routing configuration
-- [ ] OU structure creation
-- [ ] Group Policy implementation
-- [ ] File server setup
-- [ ] Client configuration
+Improving troubleshooting and documentation skills
 
-### Troubleshooting Common Issues
-#### Domain Join Issues
-1. Verify DNS settings on client
-2. Check network connectivity
-3. Ensure time synchronization
-4. Verify user has permissions to join domain
+The goal is to become more capable, resourceful, and confident in the areas I already work in — and to grow beyond that.
 
-#### Network Connectivity Issues
-1. Check virtual switch configuration
-2. Verify IP configuration
-3. Test connectivity using ping and tracert
-4. Verify routing tables
+## ⚙️ Current Setup
+You can view the current network layout, addressing scheme, and server configurations in the environment-setup.md and related files.
 
-#### DNS Resolution Problems
-1. Check DNS server service
-2. Verify zone configuration
-3. Clear DNS cache
-4. Check client DNS settings
+💡 I’ll keep this repository updated as I expand the lab and experiment with new configurations.
+
+## 🚧 Work in Progress
+This lab is evolving as I learn. Some features (like monitoring, file server structure, and onboarding automation) are in early stages and will be fleshed out over time.
