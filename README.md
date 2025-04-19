@@ -83,7 +83,7 @@ The goal is to become more capable, resourceful, and confident in the areas I al
 
 ## ⚙️ Current Setup
 You can view the current network layout, addressing scheme, and server configurations in the environment-setup.md and related files.
-
+![HyperV Config](documentation/images/Riverside%20Virtual%20Topology.drawio.png)
 💡 I’ll keep this repository updated as I expand the lab and experiment with new configurations.
 
 ## 🚧 Work in Progress
