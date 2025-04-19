@@ -65,6 +65,8 @@ I am hoping this Lab will replicate the following multi-site enterprise environm
 ## 🧠 Learning Goals for Environment
 - Build confidence with core Windows Server roles
 
+- Look at the relationship between on-site and cloud services, especially Azure Arc
+
 - Understand domain structure, DNS, DHCP, routing
 
 - Practice troubleshooting and helpdesk scenarios
