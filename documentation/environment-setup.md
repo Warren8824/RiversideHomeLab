@@ -51,7 +51,7 @@ Services:
 
 Optional Clients
 
-- Windows 11 Pro, named per office eg MAN-LAP-01 / MAN-PC-01
+- Windows 10 Pro Eval, named per office eg MAN-LAP-01 / MAN-PC-01
 
 - Domain joined to riverside.local
 
