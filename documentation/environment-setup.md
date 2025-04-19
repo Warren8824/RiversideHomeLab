@@ -4,12 +4,13 @@ This document outlines the setup of the virtual lab environment hosted on Hyper-
 
 ## 🖥️ Host Machine
 
-Component	Spec
-OS	Windows 11 Pro
-CPU	Intel(R) Core(TM) i5-8350U CPU @ 1.70GHz   1.90 GHz
-RAM	32GB DDR4
-Storage	500GB External SSD
-Virtualization Platform	Hyper-V (Native Windows)
+|Component	|Spec|
+-----------|---|
+|OS	|Windows 11 Pro
+|CPU	|Intel(R) Core(TM) i5-8350U CPU @ 1.70GHz   1.90 GHz
+|RAM	|32GB DDR4
+|Storage	|500GB External SSD
+|Virtualization Platform	|Hyper-V (Native Windows)
 
 
 ## 🧵 Virtual Networking
