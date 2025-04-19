@@ -83,6 +83,6 @@
 
 ### Network Diagram
 #### Virtual Network Diagram
-![HyperV Configuration](./images/Riverside%20Virtual%20Topology.drawio.png)
+![HyperV Configuration](../images/Riverside%20Virtual%20Topology.drawio.png)
 #### Physical Network Idea
-![Physical Network](./images/Riverside%20Physical%20Topology.drawio.png)
+![Physical Network](../images/Riverside%20Physical%20Topology.drawio.png)
