@@ -57,8 +57,7 @@ This document details the internal IP addressing scheme used across the virtual 
 
 ---
 
-###  Optional :
+###  Client Configuration
 
-- Screenshot of `ipconfig /all` from a client showing DHCP config working
-- Screenshot of DHCP leases on DC01
-- Diagram of subnets with IP ranges marked out (visually)
+![DHCP](images/ipconfig MAN-LAP-01.png)
+This is the configuration handed to a client on the Manchester site subnet (10.90.10.x/24).
