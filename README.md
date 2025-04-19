@@ -5,13 +5,19 @@ This document describes the current Windows Server 2019 Hyper-V lab environment 
 
 ## Lab Environment Specifications
 
-### Host System
+### Recommended Host System
 - **Operating System**: Windows 10/11 Pro (or Windows Server 2019)
 - **CPU**: Intel/AMD with virtualization support
 - **RAM**: 16GB or higher (recommended)
 - **Storage**: 500GB SSD or higher
 - **Network**: Single physical adapter with internet access
 
+### Current Used Host System
+- **Operating System**: Windows 11 Pro
+- **CPU**: Intel(R) Core(TM) i5-8350U CPU @ 1.70GHz   1.90 GHz
+- **RAM**: 32GB
+- **Storage**: 500GB External SSD
+- **Network**: Intel(R) Dual Band Wireless-AC 8265 
 ### Virtual Network Configuration
 
 #### Virtual Switches
