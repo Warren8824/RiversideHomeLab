@@ -39,10 +39,13 @@ Dynamic disk size in Hyper V prevents full disk space being taken unless require
 
 ###  Virtual Switch Configuration
 
-| vSwitch Name   | Type     | Connected To     | Purpose                                |
-|----------------|----------|------------------|----------------------------------------|
-| NATSwitch      | Internal | NAT Adapter      | Provides internet to lab (via DC01)    |
-| LabSwitch      | Internal | N/A              | Main LAN for all site subnets          |
+| vSwitch Name | Type     | Connected To | Purpose                             |
+|--------------|----------|--------------|-------------------------------------|
+| NATSwitch    | Internal | Host - NAT`d | Provides internet to lab (via DC01) |
+| MAN-SW01     | Private  | n/a          | Manchester Site LAN                 |
+| LEE-SW01     | Private  | n/a          | Leeds Site LAN                      |
+| LIV-SW01     | Private  | n/a          | Liverpool Site LAN                  |
+| HUL-SW01     | Private  | n/a          | Hull Site LAN                       |
 
 ![Virtual Switches](images/VSwitches.png)
 
@@ -50,8 +53,8 @@ Dynamic disk size in Hyper V prevents full disk space being taken unless require
 
 ###  Performance Considerations
 
-- All VMs run simultaneously for GPO and routing testing
-- Host CPU rarely hits 100% due to low VM CPU usage
+- Three VMs run simultaneously for GPO and routing testing
+- Host CPU rarely hits 100% due to low number of VM`s running
 - Disk IO spikes occasionally — SSD highly recommended
 - Dynamic memory turned off for stability during routing and DHCP testing
 
@@ -60,8 +63,8 @@ Dynamic disk size in Hyper V prevents full disk space being taken unless require
 ###  Lessons Learned
 
 - 32GB RAM is the sweet spot for running multiple VMs with GUI clients
-- Keeping client VMs lightweight (2GB RAM) helps performance
-- Hyper-V internal switches make subnet isolation easier than expected
+- Keeping client VMs lightweight (4GB RAM) helps performance
+- Hyper-V internal switches make subnet isolation easier to replicate than expected
 - Adding NAT via RRAS on DC01 saved time over configuring firewall rules
 
 ---
