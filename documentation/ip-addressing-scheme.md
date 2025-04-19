@@ -59,5 +59,5 @@ This document details the internal IP addressing scheme used across the virtual 
 
 ###  Client Configuration
 
-![DHCP](images/ipconfig MAN-LAP-01.png)
+![Client with DHCP Lease](images/ipconfigMAN-LAP-01.png)
 This is the configuration handed to a client on the Manchester site subnet (10.90.10.x/24).
