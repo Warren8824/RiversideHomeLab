@@ -7,15 +7,15 @@ This document outlines the physical hardware and virtual infrastructure used to 
 
 ###  Host Machine Specifications
 
-| Component         | Specification                   |
-|------------------|---------------------------------|
-| Host Device       | Dell Latitude 7940 - Battery Dead |
-| CPU               | Intel(R) Core(TM) i5-8350U CPU @ 1.70GHz   1.90 GHz |
-| RAM               | 32 GB DDR4 @ 2800MHz            |
-| Storage           | 500GB External SSD              |
-| OS                | Windows 11 Pro                  |
-| Virtualization    | Hyper-V enabled                 |
-| Network Interfaces| Intel(R) Dual Band Wireless-AC 8265 + Multiple vSwitches           |
+| Component         | Specification                                            |
+|------------------|----------------------------------------------------------|
+| Host Device       | Dell Latitude 7940 - Battery Dead                        |
+| CPU               | Intel(R) Core(TM) i5-8350U CPU @ 1.70GHz   1.90 GHz      |
+| RAM               | 32 GB DDR4 @ 2400MHz                                     |
+| Storage           | 500GB External SSD                                       |
+| OS                | Windows 11 Pro                                           |
+| Virtualization    | Hyper-V enabled                                          |
+| Network Interfaces| Intel(R) Dual Band Wireless-AC 8265 + Multiple vSwitches |
 
 ![Host Spec](images/HostSystem.png)
 
