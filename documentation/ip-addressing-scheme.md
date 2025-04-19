@@ -1,11 +1,11 @@
-## 📁 `documentation/ip-addressing-scheme.md`
+##  `documentation/ip-addressing-scheme.md`
 
-### 🧾 Purpose  
+###  Purpose  
 This document details the internal IP addressing scheme used across the virtual lab network. Each site (Manchester, Leeds, Liverpool, Hull) is logically segmented into its own subnet to simulate real-world office branch networking. The goal is to mirror common enterprise setups for Active Directory, DHCP, and inter-site routing practices.
 
 ---
 
-### 🌐 Subnet Overview
+###  Subnet Overview
 
 | Site         | Network        | Subnet Mask   | IP Range              | Purpose        |
 |--------------|----------------|---------------|------------------------|----------------|
@@ -17,7 +17,7 @@ This document details the internal IP addressing scheme used across the virtual 
 
 ---
 
-### 🧠 Addressing Conventions
+###  Addressing Conventions
 
 - **.1** reserved for DC01’s interface on that subnet (acting as default gateway + DHCP relay)
 - **.2 – .19** reserved for infrastructure (future additions like file servers, printers, etc.)
@@ -26,7 +26,7 @@ This document details the internal IP addressing scheme used across the virtual 
 
 ---
 
-### 🌍 Routing Design
+###  Routing Design
 
 - All subnets are routed via DC01
 - RRAS service enabled on DC01 for inter-site routing and internet NAT
@@ -36,7 +36,7 @@ This document details the internal IP addressing scheme used across the virtual 
 
 ---
 
-### 📡 DHCP Configuration (via DC01)
+###  DHCP Configuration (via DC01)
 
 | Subnet       | Scope Range             | Default Gateway | DNS Server     | Domain Name       |
 |--------------|--------------------------|------------------|----------------|--------------------|
@@ -49,7 +49,7 @@ This document details the internal IP addressing scheme used across the virtual 
 
 ---
 
-### 🛠️ Lessons Learned
+###  Lessons Learned
 
 - Simulating multi-site routing on a single host was harder than expected but rewarding
 - Needed to manually configure static IPs on server NICs to match role and subnet layout
@@ -57,7 +57,7 @@ This document details the internal IP addressing scheme used across the virtual 
 
 ---
 
-### ✅ Optional :
+###  Optional :
 
 - Screenshot of `ipconfig /all` from a client showing DHCP config working
 - Screenshot of DHCP leases on DC01

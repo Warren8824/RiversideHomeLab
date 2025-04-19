@@ -1,8 +1,8 @@
-# 📁 documentation/environment-setup.md
-## 🧾 Purpose
+#  `documentation/environment-setup.md`
+##  Purpose
 This document outlines the setup of the virtual lab environment hosted on Hyper-V. It includes the virtual networking, switch configurations, VM details, and roles/services installed. The environment is used as a sandbox to learn IT support fundamentals and enterprise Windows infrastructure.
 
-## 🖥️ Host Machine
+##  Host Machine
 
 |Component	|Spec|
 -----------|---|
@@ -13,7 +13,7 @@ This document outlines the setup of the virtual lab environment hosted on Hyper-
 |Virtualization Platform	|Hyper-V (Native Windows)
 
 
-## 🧵 Virtual Networking
+##  Virtual Networking
 Private Switches: Four private switches simulate isolated site networks.
 
 Internal Switch: Provides controlled internet access for VMs via NAT.
@@ -29,7 +29,7 @@ Internal Switch: Provides controlled internet access for VMs via NAT.
 
 ![HyperV Config](images/VSwitches.png)
 
-## 🧱 Virtual Machines
+##  Virtual Machines
 DC01 – Domain Controller
 OS: Windows Server 2025
 
@@ -63,7 +63,7 @@ I am hoping this Lab will replicate the following multi-site enterprise environm
 
 ![Physical Network](images/Riverside%20Physical%20Topology.drawio.png)
 
-## 🧠 Learning Goals for Environment
+##  Learning Goals for Environment
 - Build confidence with core Windows Server roles
 
 - Look at the relationship between on-site and cloud services, especially Azure Arc
