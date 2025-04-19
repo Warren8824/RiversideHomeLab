@@ -32,7 +32,7 @@ This document details the internal IP addressing scheme used across the virtual 
 - RRAS service enabled on DC01 for inter-site routing and internet NAT
 - NAT is handled via internal adapter connected to `192.168.100.0/24` (NATSwitch)
 
-> _Could include a screenshot from RRAS showing the active NAT config or routing interfaces._
+![NAT](images/NAT.png)
 
 ---
 
@@ -45,7 +45,7 @@ This document details the internal IP addressing scheme used across the virtual 
 | Liverpool    | 10.90.30.20 – .250       | 10.90.30.1       | 10.90.10.1     | riverside.local    |
 | Hull         | 10.90.40.20 – .250       | 10.90.40.1       | 10.90.10.1     | riverside.local    |
 
-> _Adding screenshots from the DHCP console would be 🔥 for this one — even if just Manchester's scope properties._
+![DHCP](images/DHCP.png)
 
 ---
 
