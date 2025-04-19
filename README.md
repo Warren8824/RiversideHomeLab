@@ -34,8 +34,8 @@ This setup includes:
 riverside-lab/
 ├── README.md                                       # This file
 ├── documentation/                                  # Core setup documentation
-│   ├── environment-setup.md                        # Step-by-step lab build guide
 │   ├── images/                                     # Visual network layout and config images - Linked throughout
+│   ├── environment-setup.md                        # Step-by-step lab build guide
 |   |   ├── DC01Creation.png
 |   |   └── VSwitches.png etc.
 │   ├── ip-addressing-scheme.md                     # IP/subnet breakdown
