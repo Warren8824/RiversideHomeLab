@@ -12,7 +12,7 @@ Everything here has been self-taught, built from scratch on personal hardware, a
 
 This setup includes:
 
-- A **Windows Server 2019 Domain Controller** running:
+- A **Windows Server 2025 Domain Controller** running:
   - Active Directory Domain Services
   - DHCP & DNS roles
   - Routing & Remote Access for multi-subnet connectivity
@@ -82,8 +82,9 @@ Improving troubleshooting and documentation skills
 The goal is to become more capable, resourceful, and confident in the areas I already work in — and to grow beyond that.
 
 ## ⚙️ Current Setup
-You can view the current network layout, addressing scheme, and server configurations in the environment-setup.md and related files.
+You can view the current network layout, addressing scheme, and server configurations in the [environment-setup.md](documentation/environment-setup.md) and related files.
 ![HyperV Config](documentation/images/Riverside%20Virtual%20Topology.drawio.png)
+
 💡 I’ll keep this repository updated as I expand the lab and experiment with new configurations.
 
 ## 🚧 Work in Progress

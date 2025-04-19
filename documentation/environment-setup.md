@@ -26,13 +26,13 @@ Internal Switch: Provides controlled internet access for VMs via NAT.
 |HUL-SW01	|Private	|Hull office|
 |NATSwitch	|Internal	|NAT for internet access|
 
-![HyperV Config](images/Riverside%20Virtual%20Topology.drawio.png)
+![HyperV Config](images/VSwitches.png)
 
 ## 🧱 Virtual Machines
 DC01 – Domain Controller
 OS: Windows Server 2025
 
-vCPU: 2 | RAM: 4GB | Storage: 80GB
+vCPU: 4 | RAM: 4GB | Storage: 80GB
 
 Network: 5 adapters – one per office, plus NAT
 
@@ -46,7 +46,7 @@ Services:
 
 - RRAS (Routing/NAT)
 
-⚠️ Screenshots of the DC’s network adapter config (IP setup) and roles summary from Server Manager would really add value.
+![DC01 Creation](images/DC01Creation.png)
 
 Optional Clients
 
