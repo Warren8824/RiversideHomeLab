@@ -62,7 +62,7 @@ Dynamic disk size in Hyper V prevents full disk space being taken unless require
 
 ###  Lessons Learned
 
-- 32GB RAM is the sweet spot for running multiple VMs with GUI clients
+- 32GB RAM is the sweet spot for running multiple VMs with GUI clients, 16GB would not perform well.
 - Keeping client VMs lightweight (4GB RAM) helps performance
 - Hyper-V internal switches make subnet isolation easier to replicate than expected
 - Adding NAT via RRAS on DC01 saved time over configuring firewall rules
