@@ -56,6 +56,12 @@ Optional Clients
 
 - Used for helpdesk practice and GPO testing
 
+## Real World Comparison
+
+I am hoping this Lab will replicate the following multi-site enterprise environment and serve as a solid sandbox for practicing applicable skills.
+
+![Physical Network](images/Riverside%20Physical%20Topology.drawio.png)
+
 ## 🧠 Learning Goals for Environment
 - Build confidence with core Windows Server roles
 
