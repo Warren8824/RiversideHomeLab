@@ -16,6 +16,7 @@ This document outlines a full AD structure that:
 - Supports targeting and filtering for users and devices
 - Enables efficient administrative delegation
 - Allows dynamic attribute-based filtering (e.g., by job title or department)
+- Excessive OU depth for this setup to represent real world applications
 
 ---
 
