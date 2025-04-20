@@ -10,13 +10,13 @@ This environment is part of a personal upskilling initiative and is built to ref
 
 ## Host System
 
-| Component              | Spec                                                       |
-|------------------------|------------------------------------------------------------|
-| OS                     | Windows 11 Pro                                             |
-| CPU                    | Intel Core i5-8350U @ 1.90 GHz                             |
-| RAM                    | 32GB DDR4                                                  |
-| Storage                | 500GB External SSD                                         |
-| Virtualization Platform| Hyper-V (Native to Windows)                               |
+| Component              | Spec                           |
+|------------------------|--------------------------------|
+| OS                     | Windows 11 Pro                 |
+| CPU                    | Intel Core i5-8350U @ 1.90 GHz |
+| RAM                    | 32GB DDR4 @ 2400MHz            |
+| Storage                | 500GB External SSD             |
+| Virtualization Platform| Hyper-V (Native to Windows)    |
 
 ---
 
