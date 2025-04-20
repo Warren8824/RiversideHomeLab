@@ -30,7 +30,7 @@ This document details the internal IP addressing scheme used across the virtual 
 
 - All subnets are routed via DC01
 - RRAS service enabled on DC01 for inter-site routing and internet NAT
-- NAT is handled via internal adapter connected to `192.168.100.0/24` (NATSwitch)
+- NAT is handled via internal adapter connected to `192.168.100.2/24` (NATSwitch)
 
 ![NAT](images/NAT.png)
 
