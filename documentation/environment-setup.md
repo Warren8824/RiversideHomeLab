@@ -92,8 +92,12 @@ This lab is designed to reflect a multi-site enterprise setup with site-to-site 
 Open Hyper-V Manager > Virtual Switch Manager
 
 - Create four Private switches: `MAN-SW01`, `LEE-SW01`, `LIV-SW01`, `HUL-SW01`
+- > This step should be done manually
+
+### Step 1b:
+
 - Create one Internal switch: `NATSwitch` and configure static IP of `192.168.100.1/24` on Host 
-- > Automate Step 1: [Create NAT and Config](../env-build-scripts/01ImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1) script.
+- > Automate Step 1b: [Create NAT and Config](../env-build-scripts/01ImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1) script.
 
 ---
 
