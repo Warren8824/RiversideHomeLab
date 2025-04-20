@@ -92,7 +92,7 @@ This lab is designed to reflect a multi-site enterprise setup with site-to-site 
 Open Hyper-V Manager > Virtual Switch Manager
 
 - Create four Private switches: `MAN-SW01`, `LEE-SW01`, `LIV-SW01`, `HUL-SW01`
-- Create one Internal switch: `NATSwitch` and configure static IP of `192.168.100.1/24` on Host - This can be done using [Create NAT and Config](../env-build-scripts/01ImportHyperVandCreateNATSwitchandConfigHostNIC.ps1)
+- Create one Internal switch: `NATSwitch` and configure static IP of `192.168.100.1/24` on Host - This can be done using the [Create NAT and Config](../env-build-scripts/01ImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1) script.
 
 ---
 
@@ -105,7 +105,7 @@ Open Hyper-V Manager > Virtual Switch Manager
 - OS: Windows Server 2025 (Evaluation ISO)
 
 In VM Settings:
-- Add **five** network adapters (one per switch)
+- Add NATSwitch - Step 2 can be complete using the [Create DC VM](../env-build-scripts/02CreateDCVM_Host.ps1) script.
 
 Start DC01 and install the OS.
 
