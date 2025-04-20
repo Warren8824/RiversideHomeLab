@@ -58,7 +58,7 @@ riverside-lab/
 │   ├── folder-structure.md
 │   ├── permissions-matrix.md
 │   └── scripts/
-├── scripts/                 # PowerShell scripts used for building system
+├── env-build-scripts/             # PowerShell scripts used for building system
 │   ├── ADDSSetupforRiverside.ps1  # Script that will complete the ADDS setup forRiverside after installing role
 ├── skill-journal/                 # Learning log
 │   ├── week1-active-directory.md
