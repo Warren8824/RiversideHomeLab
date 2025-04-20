@@ -96,7 +96,7 @@ Open Hyper-V Manager > Virtual Switch Manager
 
 ---
 
-### Step 2: Create Domain Controller (DC01)
+### Step 2a: Create Domain Controller (DC01)
 
 - Name: `DC01`
 - Generation: 2
@@ -105,7 +105,16 @@ Open Hyper-V Manager > Virtual Switch Manager
 - OS: Windows Server 2025 (Evaluation ISO)
 
 In VM Settings:
-- Add NATSwitch - Step 2 can be complete using the [Create DC VM](../env-build-scripts/02CreateDCVM_Host.ps1) script.
+- Add NATSwitch 
+- All of Step 2a can be complete using the [Create DC VM](../env-build-scripts/02CreateDCVM_Host.ps1) script.
+
+#### Step 2b:
+
+Manually Add network cards to the private switches to the VM using Hyper V settings - `MAN-SW01`, `LEE-SW01`, `LIV-SW01`, `HUL-SW01`
+- Right Click DC01 in Hyper V Manager > Settings
+- Add Hardware > Network Adapter > Click Add
+- Select each of the private switches from the virtual switch dropdown and click apply
+- Add all switches and Click OK
 
 Start DC01 and install the OS.
 
