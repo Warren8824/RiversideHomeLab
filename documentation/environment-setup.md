@@ -93,7 +93,7 @@ Open Hyper-V Manager > Virtual Switch Manager
 
 - Create four Private switches: `MAN-SW01`, `LEE-SW01`, `LIV-SW01`, `HUL-SW01`
 - Create one Internal switch: `NATSwitch` and configure static IP of `192.168.100.1/24` on Host 
-- > Automate this step: [Create NAT and Config](../env-build-scripts/01ImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1) script.
+- > Automate Step 1: [Create NAT and Config](../env-build-scripts/01ImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1) script.
 
 ---
 
@@ -107,7 +107,7 @@ Open Hyper-V Manager > Virtual Switch Manager
 
 In VM Settings:
 - Add NATSwitch 
-- > Automate step 2a: [Create DC VM](../env-build-scripts/02CreateDCVM_Host.ps1) script.
+- > Automate Step 2a: [Create DC VM](../env-build-scripts/02CreateDCVM_Host.ps1) script.
 
 #### Step 2b:
 
@@ -120,6 +120,7 @@ Manually Add network cards to the private switches to the VM using Hyper V setti
 
 Start DC01 and install the OS.
 
+> Step 2b needs completing manually on the host machine.
 ---
 
 ### Step 3: Configure Networking
@@ -139,11 +140,11 @@ On DC01:
 | HUL            | 10.90.40.1     | 255.255.255.0  | (leave blank)   | 10.90.10.1       |
 | NATSwitch      | 192.168.100.2  | 255.255.255.0  | 192.168.100.1   | 8.8.8.8 / 8.8.4.4|
 
-> Automate step 3: [Configure DC01 Network Cards](../env-build-scripts/03DCNICConfig.ps1)
+> Automate Step 3: [Configure DC01 Network Cards](../env-build-scripts/03DCNICConfig.ps1) script.
 
 ---
 
-### Step 4: Add Roles and Promote to Domain Controller
+### Step 4a: Add Roles and Promote to Domain Controller
 
 - Change PC name to `DC01` and restart.
 - Open **Server Manager > Add Roles and Features**.
@@ -154,16 +155,16 @@ On DC01:
   - Remote Access
 - Install required management tools.
 
-> Automate this step: [Change PC name and Add roles](../env-build-scripts/04RenameandAddRoles.ps1)
+> Automate Step 4a: [Change PC name and Add roles](../env-build-scripts/04RenameandAddRoles.ps1) script.
 
-#### Domain Setup:
+#### Domain Setup - 4b:
 
 - Create **new forest**: `riverside.local`
 - Set a secure **Directory Services Restore Mode (DSRM)** password (not shown).
 - Use default NetBIOS name.
 - Restart when prompted.
 
-> Automate the step: [Domain Setup](../env-build-scripts/04bADDSSetup.ps1).
+> Automate Step 4b: [Domain Setup](../env-build-scripts/04bADDSSetup.ps1) script.
 
 ---
 
