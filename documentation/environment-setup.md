@@ -154,6 +154,8 @@ On DC01:
   - Remote Access
 - Install required management tools.
 
+> Automate this step: [Change PC name and Add roles](../env-build-scripts/04RenameandAddRoles.ps1)
+
 #### Domain Setup:
 
 - Create **new forest**: `riverside.local`
@@ -161,7 +163,7 @@ On DC01:
 - Use default NetBIOS name.
 - Restart when prompted.
 
-> Automate Step 4: [.\ADDSSetupforRiverside.ps1](`../scripts/ADDSSetupforRiverside.ps1`).
+> Automate the step: [Domain Setup](../env-build-scripts/04bADDSSetup.ps1).
 
 ---
 
