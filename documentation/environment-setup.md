@@ -210,6 +210,9 @@ For each DHCP scope:
 Restart the server.
 
 ---
+### Hyper V Network Diagram
+
+![Network Diagram](images/Riverside%20Virtual%20Topology.drawio.png)
 
 ## Learning Outcomes
 
