@@ -92,7 +92,8 @@ This lab is designed to reflect a multi-site enterprise setup with site-to-site 
 Open Hyper-V Manager > Virtual Switch Manager
 
 - Create four Private switches: `MAN-SW01`, `LEE-SW01`, `LIV-SW01`, `HUL-SW01`
-- Create one Internal switch: `NATSwitch` and configure static IP of `192.168.100.1/24` on Host - Automate this step: [Create NAT and Config](../env-build-scripts/01ImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1) script.
+- Create one Internal switch: `NATSwitch` and configure static IP of `192.168.100.1/24` on Host 
+- > Automate this step: [Create NAT and Config](../env-build-scripts/01ImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1) script.
 
 ---
 
@@ -106,7 +107,7 @@ Open Hyper-V Manager > Virtual Switch Manager
 
 In VM Settings:
 - Add NATSwitch 
-- Automate step 2a: [Create DC VM](../env-build-scripts/02CreateDCVM_Host.ps1) script.
+- > Automate step 2a: [Create DC VM](../env-build-scripts/02CreateDCVM_Host.ps1) script.
 
 #### Step 2b:
 
@@ -138,7 +139,7 @@ On DC01:
 | HUL            | 10.90.40.1     | 255.255.255.0  | (leave blank)   | 10.90.10.1       |
 | NATSwitch      | 192.168.100.2  | 255.255.255.0  | 192.168.100.1   | 8.8.8.8 / 8.8.4.4|
 
-Automate step 3: [Configure DC01 Network Cards](../env-build-scripts/03DCNICConfig.ps1)
+> Automate step 3: [Configure DC01 Network Cards](../env-build-scripts/03DCNICConfig.ps1)
 
 ---
 
@@ -160,7 +161,7 @@ Automate step 3: [Configure DC01 Network Cards](../env-build-scripts/03DCNICConf
 - Use default NetBIOS name.
 - Restart when prompted.
 
-> You can optionally automate this using [.\ADDSSetupforRiverside.ps1](`../scripts/ADDSSetupforRiverside.ps1`).
+> Automate Step 4: [.\ADDSSetupforRiverside.ps1](`../scripts/ADDSSetupforRiverside.ps1`).
 
 ---
 
