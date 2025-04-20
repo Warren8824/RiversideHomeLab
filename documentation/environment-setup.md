@@ -1,77 +1,247 @@
-#  `documentation/environment-setup.md`
-##  Purpose
-This document outlines the setup of the virtual lab environment hosted on Hyper-V. It includes the virtual networking, switch configurations, VM details, and roles/services installed. The environment is used as a sandbox to learn IT support fundamentals and enterprise Windows infrastructure.
+# Riverside Hyper-V Lab Environment
 
-##  Host Machine
+## Purpose
 
-|Component	|Spec|
------------|---|
-|OS	|Windows 11 Pro
-|CPU	|Intel(R) Core(TM) i5-8350U CPU @ 1.70GHz   1.90 GHz
-|RAM	|32GB DDR4
-|Storage	|500GB External SSD
-|Virtualization Platform	|Hyper-V (Native Windows)
+This document outlines the setup of a multi-site virtual lab hosted on Hyper-V. The lab mimics a realistic enterprise network spanning multiple locations. It includes switch configurations, virtual machines, and key Windows Server roles. The environment serves as a sandbox for learning IT support fundamentals and modern enterprise infrastructure.
 
+This environment is part of a personal upskilling initiative and is built to reflect the networking and server topology commonly found in medium to large-scale businesses.
 
-##  Virtual Networking
-Private Switches: Four private switches simulate isolated site networks.
+---
 
-Internal Switch: Provides controlled internet access for VMs via NAT.
+## Host System
 
+| Component              | Spec                                                       |
+|------------------------|------------------------------------------------------------|
+| OS                     | Windows 11 Pro                                             |
+| CPU                    | Intel Core i5-8350U @ 1.90 GHz                             |
+| RAM                    | 32GB DDR4                                                  |
+| Storage                | 500GB External SSD                                         |
+| Virtualization Platform| Hyper-V (Native to Windows)                               |
 
-|Switch Name	|Type	|Purpose|
-----------|-----------|---------------------|
-|MAN-SW01	|Private	|Manchester office|
-|LEE-SW01	|Private	|Leeds office|
-|LIV-SW01	|Private	|Liverpool office|
-|HUL-SW01	|Private	|Hull office|
-|NATSwitch	|Internal	|NAT for internet access|
+---
 
-![HyperV Config](images/VSwitches.png)
+## Virtual Networking
 
-##  Virtual Machines
-DC01 – Domain Controller
-OS: Windows Server 2025
+### Switch Configuration
 
-vCPU: 4 | RAM: 4GB | Storage: 80GB
+- **4 Private Virtual Switches** — simulate isolated site networks (no external connectivity).
+- **1 Internal Virtual Switch** — used for internet access via NAT.
 
-Network: 5 adapters – one per office, plus NAT
+| Switch Name | Type     | Purpose             |
+|-------------|----------|---------------------|
+| MAN-SW01    | Private  | Manchester Office   |
+| LEE-SW01    | Private  | Leeds Office        |
+| LIV-SW01    | Private  | Liverpool Office    |
+| HUL-SW01    | Private  | Hull Office         |
+| NATSwitch   | Internal | Internet Access via NAT |
 
-Services:
+![Virtual Switch Configuration](images/VSwitches.png)
 
-- AD DS
+---
 
-- DNS
+## Virtual Machines
 
-- DHCP
+### Domain Controller (DC01)
 
-- RRAS (Routing/NAT)
+| Property     | Value                         |
+|--------------|-------------------------------|
+| Name         | DC01                          |
+| OS           | Windows Server 2025 (Eval)    |
+| vCPU         | 4                             |
+| RAM          | 4GB                           |
+| Disk         | 80GB                          |
+| Network Cards| 5 (one per site + NATSwitch)  |
+
+#### Services Installed:
+
+- Active Directory Domain Services (AD DS)
+- DNS Server
+- DHCP Server
+- RRAS (Routing and NAT)
+
+> Used as the core controller of the network. Hosts all site connectivity, IP management, DNS resolution, and domain services.
 
 ![DC01 Creation](images/DC01Creation.png)
 
-Optional Clients
+---
 
-- Windows 10 Pro Eval, named per office eg MAN-LAP-01 / MAN-PC-01
+### Optional Client VMs
 
-- Domain joined to riverside.local
+- Windows 10 Pro Eval
+- Named per office: `MAN-LAP-01`, `LEE-PC-01`, etc.
+- Domain joined to: `riverside.local`
+- Used for:
+  - Helpdesk simulation
+  - GPO testing
+  - Connectivity checks
 
-- Used for helpdesk practice and GPO testing
+---
 
 ## Real World Comparison
 
-I am hoping this Lab will replicate the following multi-site enterprise environment and serve as a solid sandbox for practicing applicable skills.
+This lab is designed to reflect a multi-site enterprise setup with site-to-site routing and central domain control.
 
-![Physical Network](images/Riverside%20Physical%20Topology.drawio.png)
+![Real-World Topology](images/Riverside%20Physical%20Topology.drawio.png)
 
-##  Learning Goals for Environment
-- Build confidence with core Windows Server roles
+---
 
-- Look at the relationship between on-site and cloud services, especially Azure Arc
+## Build Process (Step-by-Step)
 
-- Understand domain structure, DNS, DHCP, routing
+### Step 1: Create Virtual Switches
 
-- Practice troubleshooting and helpdesk scenarios
+Open Hyper-V Manager > Virtual Switch Manager
 
-- Use GPOs to apply policy across sites
+- Create four Private switches: `MAN-SW01`, `LEE-SW01`, `LIV-SW01`, `HUL-SW01`
+- Create one Internal switch: `NATSwitch`
 
-- Write scripts to automate common tasks
+---
+
+### Step 2: Create Domain Controller (DC01)
+
+- Name: `DC01`
+- Generation: 2
+- RAM: 4GB
+- Disk: 80GB
+- OS: Windows Server 2025 (Evaluation ISO)
+
+In VM Settings:
+- Add **five** network adapters (one per switch)
+
+Start DC01 and install the OS.
+
+---
+
+### Step 3: Configure Networking
+
+On DC01:
+
+- Rename NICs in **Control Panel > Network and Sharing Center > Change Adapter Settings**
+- Use `Get-VMNetworkAdapter -VMName "DC01"` (on host) to match NICs to switches.
+
+#### IP Configuration (Static):
+
+| NIC Role       | IP Address     | Subnet         | Gateway         | DNS              |
+|----------------|----------------|----------------|------------------|------------------|
+| MAN            | 10.90.10.1     | 255.255.255.0  | (leave blank)   | 10.90.10.1       |
+| LEE            | 10.90.20.1     | 255.255.255.0  | (leave blank)   | 10.90.10.1       |
+| LIV            | 10.90.30.1     | 255.255.255.0  | (leave blank)   | 10.90.10.1       |
+| HUL            | 10.90.40.1     | 255.255.255.0  | (leave blank)   | 10.90.10.1       |
+| NATSwitch      | 192.168.100.2  | 255.255.255.0  | 192.168.100.1   | 8.8.8.8 / 8.8.4.4|
+
+---
+
+### Step 4: Promote to Domain Controller
+
+- Change PC name to `DC01` and restart.
+- Open **Server Manager > Add Roles and Features**.
+- Add:
+  - Active Directory Domain Services
+  - DHCP Server
+  - DNS Server
+  - Remote Access
+- Install required management tools.
+
+#### Domain Setup:
+
+- Create **new forest**: `riverside.local`
+- Set a secure **Directory Services Restore Mode (DSRM)** password (not shown).
+- Use default NetBIOS name.
+- Restart when prompted.
+
+> You can optionally automate this using [.\ADDSSetupforRiverside.ps1](`../scripts/ADDSSetupforRiverside.ps1`).
+
+---
+
+### Step 5: Configure DHCP
+
+In Server Manager:
+
+- Complete DHCP post-install configuration.
+- Tools > DHCP > [ServerName] > IPv4 > New Scope
+
+Repeat for each site:
+
+| Setting            | Value                  |
+|--------------------|------------------------|
+| Start IP           | 10.90.x.20             |
+| End IP             | 10.90.x.250            |
+| Subnet Mask        | 255.255.255.0          |
+| Lease Duration     | 1 Day                  |
+| Gateway            | 10.90.x.1              |
+| DNS Server         | 10.90.10.1             |
+
+> Ensure all scopes are active and assigned to the correct interfaces.
+
+---
+
+### Step 6: Configure DNS
+
+- Confirm A records are being created.
+- Add Forwarders: `8.8.8.8`, `1.1.1.1`
+- Right-click Reverse Lookup Zones > New Zone (per subnet)
+
+Set each to:
+- Zone Type: Primary
+- Scope: To all servers in the domain
+- Zone Name: Based on subnet (e.g. `10.90.10`)
+- Dynamic Updates: Secure only
+
+For each DHCP scope:
+- Enable dynamic DNS updates
+- Enable updates for clients not requesting DNS
+
+---
+
+### Step 7: Setup RRAS (Routing & NAT)
+
+- Tools > Routing and Remote Access
+- Right-click `DC01` > Configure and Enable Routing and Remote Access
+- Select **Custom Configuration** > NAT and LAN Routing
+- Start Service
+
+#### Enable NAT:
+
+- Expand `DC01 > IPv4 > NAT`
+- Right-click > New Interface > Select `NATSwitch`
+- Choose:
+  - Public Interface Connected to Internet
+  - Enable NAT on this interface
+
+Restart the server.
+
+---
+
+## Learning Outcomes
+
+This environment was created to:
+
+- Build confidence with core Windows Server roles (AD, DNS, DHCP, RRAS)
+- Understand virtualized networking and subnetting
+- Practice real-world helpdesk scenarios and troubleshooting
+- Apply and test Group Policy Objects (GPOs)
+- Prepare for integration with cloud services (e.g., Azure Arc)
+- Script common setup and rebuild tasks
+
+---
+
+## Enterprise Alignment
+
+While built on a personal device using Hyper-V, the structure of this lab reflects enterprise principles:
+
+- Multi-site VLAN-style segmentation
+- Central domain controller managing all subnets
+- NAT + internal routing for secure internet access
+- Structured DHCP and DNS delegation
+- Role-based service deployment
+
+This mirrors many core concepts seen in production networks across SMEs and larger organizations.
+
+---
+
+## Notes
+
+- This environment can be extended with cloud connectors or client monitoring tools.
+- Firewall rules, site-to-site VPN, and Azure AD hybrid join are logical future steps.
+
+---
+
