@@ -65,13 +65,13 @@ The lab environment utilizes a single DNS server running on the multi-homed Doma
 
 #### DNS Zones Table
 
-| Zone Type | Zone Name | Subnet | Notes |
-|-----------|-----------|--------|-------|
+| Zone Type | Zone Name | Subnet | Notes               |
+|-----------|-----------|--------|---------------------|
 | Forward Lookup | riverside.local | All | Primary domain zone |
-| Reverse Lookup | 10.90.10.in-addr.arpa | 10.90.10.0/24 | Manchester subnet |
-| Reverse Lookup | 10.90.20.in-addr.arpa | 10.90.20.0/24 | Site 2 subnet |
-| Reverse Lookup | 10.90.30.in-addr.arpa | 10.90.30.0/24 | Site 3 subnet |
-| Reverse Lookup | 10.90.40.in-addr.arpa | 10.90.40.0/24 | Site 4 subnet |
+| Reverse Lookup | 10.90.10.in-addr.arpa | 10.90.10.0/24 | Manchester subnet   |
+| Reverse Lookup | 10.90.20.in-addr.arpa | 10.90.20.0/24 | Leeds subnet        |
+| Reverse Lookup | 10.90.30.in-addr.arpa | 10.90.30.0/24 | Liverpool subnet    |
+| Reverse Lookup | 10.90.40.in-addr.arpa | 10.90.40.0/24 | Hull subnet         |
 
 ![DNS Zones](images/DNS.png)
 
