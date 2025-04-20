@@ -87,12 +87,12 @@ This lab is designed to reflect a multi-site enterprise setup with site-to-site 
 
 ## Build Process (Step-by-Step)
 
-### Step 1: Create Virtual Switches
+### Step 1a: Create Virtual Switches
 
 Open Hyper-V Manager > Virtual Switch Manager
 
 - Create four Private switches: `MAN-SW01`, `LEE-SW01`, `LIV-SW01`, `HUL-SW01`
-- > This step should be done manually
+- > Step 1a should be done manually
 
 ### Step 1b:
 
