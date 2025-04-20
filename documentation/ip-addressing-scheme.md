@@ -48,6 +48,43 @@ This document details the internal IP addressing scheme used across the virtual 
 ![DHCP](images/DHCP.png)
 
 ---
+### DNS Configuration on DC01 - 10.90.10.1
+
+The lab environment utilizes a single DNS server running on the multi-homed Domain Controller. Primary DNS services are provided through the Manchester Head Office NIC (10.90.10.1), which all DHCP scopes across subnets will reference. The DC's primary network interface is configured with loopback address 127.0.0.1 for DNS resolution, with external queries forwarded to Google DNS (8.8.8.8) and Cloudflare DNS (1.1.1.1).
+
+#### DNS Server Configuration Table
+
+| Configuration Item | Value | Notes |
+|-------------------|-------|-------|
+| Primary DNS Interface | 10.90.10.1 (Manchester) | All client DNS requests directed here |
+| Domain Name | riverside.local | Primary AD domain |
+| DNS Server Service Binding | All interfaces | DNS service responds on all internal NICs |
+| Loopback Configuration | 127.0.0.1 | Used on primary NIC |
+| DNS Forwarders | 8.8.8.8, 1.1.1.1 | Google DNS, Cloudflare DNS |
+| Conditional Forwarders | None configured | Can be added if external domain resolution is needed |
+
+#### DNS Zones Table
+
+| Zone Type | Zone Name | Subnet | Notes |
+|-----------|-----------|--------|-------|
+| Forward Lookup | riverside.local | All | Primary domain zone |
+| Reverse Lookup | 10.90.10.in-addr.arpa | 10.90.10.0/24 | Manchester subnet |
+| Reverse Lookup | 10.90.20.in-addr.arpa | 10.90.20.0/24 | Site 2 subnet |
+| Reverse Lookup | 10.90.30.in-addr.arpa | 10.90.30.0/24 | Site 3 subnet |
+| Reverse Lookup | 10.90.40.in-addr.arpa | 10.90.40.0/24 | Site 4 subnet |
+
+![DNS Zones](images/DNS.png)
+
+--- 
+
+#### DNS Registration and Scavenging
+
+| Setting | Value | Notes |
+|---------|-------|-------|
+| Dynamic Updates | Secure only | AD-integrated secure updates |
+| Scavenging Period | Default (7 days) | Recommended baseline setting |
+| Aging/Refresh Interval | Default (7 days) | Recommended baseline setting |
+| NIC Registration | All internal NICs | 10.90.10.1, 10.90.20.1, 10.90.30.1, 10.90.40.1 |
 
 ###  Lessons Learned
 
