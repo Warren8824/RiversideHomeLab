@@ -50,6 +50,7 @@ Dynamic disk size in Hyper V prevents full disk space being taken unless require
 
 ![Virtual Switches](images/VSwitches.png)\
 *Virtual Switch Manager - Hyper V*
+
 ---
 
 ###  Performance Considerations
