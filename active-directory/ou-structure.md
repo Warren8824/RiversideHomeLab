@@ -1,6 +1,6 @@
 # Active Directory OU Structure & Implementation Plan
 
-**Client:** Riverside Manufacturing\
+**Client:** Riverside Manufacturing - Fictional\
 **Prepared by:** Warren Bebbington\
 **Date:** 20/04/2025
 
