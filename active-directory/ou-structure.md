@@ -45,6 +45,10 @@ This document outlines a full AD structure that:
 
 ---
 
+### **Company Management Structure**
+
+![Riverside Management Structure](images/Riverside%20OU.drawio.png)
+
 ## Top-Level AD Structure
 
 ```
