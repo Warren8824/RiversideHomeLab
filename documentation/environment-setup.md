@@ -132,7 +132,7 @@ Start DC01 and install the OS.
 On DC01:
 
 - Rename NICs in **Control Panel > Network and Sharing Center > Change Adapter Settings**
-- Use `Get-VMNetworkAdapter -VMName "DC01"` (on host) to match NICs to switches to the MAC and this can be matched on the DC.
+- Use `Get-VMNetworkAdapter -VMName "DC01"` (on host) to match NICs to V-switches via the MAC addresses.
 
 Screenshot of powershell output on host machine, showing all NIC`s on DC01.
 ![VMNetworkAdapter](images/NetworkAdaptersVMDC01.png)
