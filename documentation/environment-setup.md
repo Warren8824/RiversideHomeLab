@@ -134,10 +134,10 @@ On DC01:
 - Rename NICs in **Control Panel > Network and Sharing Center > Change Adapter Settings**
 - Use `Get-VMNetworkAdapter -VMName "DC01"` (on host) to match NICs to switches to the MAC and this can be matched on the DC.
 
-Screenshot of powershell output on host machine.
+Screenshot of powershell output on host machine, showing all NIC`s on DC01.
 ![VMNetworkAdapter](images/NetworkAdaptersVMDC01.png)
 
-This can be matched on te NIC details on DC01 by double clicking a NIC, Clicking Details and looking for the MAC address.
+This can be matched on te NIC details on DC01 by double-clicking a NIC, then clicking Details and looking for the MAC address.
 ![NIC MAC Adress](images/NICMatching.png)
 
 #### IP Configuration (Static):
