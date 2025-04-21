@@ -32,7 +32,8 @@ This document details the internal IP addressing scheme used across the virtual 
 - RRAS service enabled on DC01 for inter-site routing and internet NAT
 - NAT is handled via internal adapter connected to `192.168.100.2/24` (NATSwitch)
 
-![NAT](images/NAT.png)
+![NAT](images/NAT.png)\
+*Routing and Remote Access - DC01*
 
 ---
 
@@ -45,7 +46,8 @@ This document details the internal IP addressing scheme used across the virtual 
 | Liverpool    | 10.90.30.20 – .250       | 10.90.30.1       | 10.90.10.1     | riverside.local    |
 | Hull         | 10.90.40.20 – .250       | 10.90.40.1       | 10.90.10.1     | riverside.local    |
 
-![DHCP](images/DHCP.png)
+![DHCP](images/DHCP.png)\
+*DHCP Scopes - DC01*
 
 ---
 ### DNS Configuration on DC01 - 10.90.10.1
@@ -73,7 +75,8 @@ The lab environment utilizes a single DNS server running on the multi-homed Doma
 | Reverse Lookup | 10.90.30.in-addr.arpa | 10.90.30.0/24 | Liverpool subnet    |
 | Reverse Lookup | 10.90.40.in-addr.arpa | 10.90.40.0/24 | Hull subnet         |
 
-![DNS Zones](images/DNS.png)
+![DNS Zones](images/DNS.png)\
+*Reverse Look-up Zones - DC01*
 
 --- 
 
@@ -96,5 +99,5 @@ The lab environment utilizes a single DNS server running on the multi-homed Doma
 
 ###  Client Configuration
 
-![Client with DHCP Lease](images/ipconfigMAN-LAP-01.png)
-This is the configuration handed to a client on the Manchester site subnet (10.90.10.x/24).
+![Client with DHCP Lease](images/ipconfigMAN-LAP-01.png)\
+*This is the configuration handed to a client on the Manchester site subnet (10.90.10.x/24).*
