@@ -17,7 +17,8 @@ This document outlines the physical hardware and virtual infrastructure used to 
 | Virtualization    | Hyper-V enabled                                          |
 | Network Interfaces| Intel(R) Dual Band Wireless-AC 8265 + Multiple vSwitches |
 
-![Host Spec](images/HostSystem.png)
+![Host Spec](images/HostSystem.png)\
+*Host Machine Spec*
 
 ---
 
@@ -47,8 +48,8 @@ Dynamic disk size in Hyper V prevents full disk space being taken unless require
 | LIV-SW01     | Private  | n/a          | Liverpool Site LAN                  |
 | HUL-SW01     | Private  | n/a          | Hull Site LAN                       |
 
-![Virtual Switches](images/VSwitches.png)
-
+![Virtual Switches](images/VSwitches.png)\
+*Virtual Switch Manager - Hyper V*
 ---
 
 ###  Performance Considerations
