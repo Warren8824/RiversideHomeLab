@@ -135,10 +135,10 @@ On DC01:
 - Rename NICs in **Control Panel > Network and Sharing Center > Change Adapter Settings**
 - Use `Get-VMNetworkAdapter -VMName "DC01"` (on host) to match NICs to V-switches via the MAC addresses.
 
-![VMNetworkAdapter](images/NetworkAdaptersVMDC01.png)
+![VMNetworkAdapter](images/NetworkAdaptersVMDC01.png)\
 *Screenshot of powershell output on host machine, showing all NIC`s on DC01.*
 
-![NIC MAC Adress](images/NICMatching.png)
+![NIC MAC Adress](images/NICMatching.png)\
 *This can be matched on te NIC details on DC01 by double-clicking a NIC, then clicking Details and looking for the MAC address.*
 
 #### IP Configuration (Static):
@@ -239,7 +239,7 @@ Restart the server.
 ---
 ### Hyper V Network Diagram
 
-![Network Diagram](images/Riverside%20Virtual%20Topology.drawio.png)
+![Network Diagram](images/Riverside%20Virtual%20Topology.drawio.png)\
 *Current Lab Configuration*
 
 ## Learning Outcomes
