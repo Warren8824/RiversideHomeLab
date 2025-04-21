@@ -35,7 +35,8 @@ This environment is part of a personal upskilling initiative and is built to ref
 | HUL-SW01    | Private  | Hull Office         |
 | NATSwitch   | Internal | Internet Access via NAT |
 
-![Virtual Switch Configuration](images/VSwitches.png)
+![Virtual Switch Configuration](images/VSwitches.png)\
+*Virtual Swicth Manager - Hyper V*
 
 ---
 
@@ -61,7 +62,8 @@ This environment is part of a personal upskilling initiative and is built to ref
 
 > Used as the core controller of the network. Hosts all site connectivity, IP management, DNS resolution, and domain services.
 
-![DC01 Creation](images/DC01Creation.png)
+![DC01 Creation](images/DC01Creation.png)\
+*Create new VM - Hyper V*
 
 ---
 
@@ -79,9 +81,8 @@ This environment is part of a personal upskilling initiative and is built to ref
 
 ## Real World Comparison
 
-This lab is designed to reflect a multi-site enterprise setup with site-to-site routing and central domain control.
-
 ![Real-World Topology](images/Riverside%20Physical%20Topology.drawio.png)
+*This lab is designed to reflect a multi-site enterprise setup with site-to-site routing and central domain control.*
 
 ---
 
@@ -134,11 +135,11 @@ On DC01:
 - Rename NICs in **Control Panel > Network and Sharing Center > Change Adapter Settings**
 - Use `Get-VMNetworkAdapter -VMName "DC01"` (on host) to match NICs to V-switches via the MAC addresses.
 
-Screenshot of powershell output on host machine, showing all NIC`s on DC01.
 ![VMNetworkAdapter](images/NetworkAdaptersVMDC01.png)
+*Screenshot of powershell output on host machine, showing all NIC`s on DC01.*
 
-This can be matched on te NIC details on DC01 by double-clicking a NIC, then clicking Details and looking for the MAC address.
 ![NIC MAC Adress](images/NICMatching.png)
+*This can be matched on te NIC details on DC01 by double-clicking a NIC, then clicking Details and looking for the MAC address.*
 
 #### IP Configuration (Static):
 
@@ -239,6 +240,7 @@ Restart the server.
 ### Hyper V Network Diagram
 
 ![Network Diagram](images/Riverside%20Virtual%20Topology.drawio.png)
+*Current Lab Configuration*
 
 ## Learning Outcomes
 
