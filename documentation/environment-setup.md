@@ -237,6 +237,11 @@ For each DHCP scope:
 Restart the server.
 
 ---
+
+Then I moved on to the [AD Structure](../active-directory/ou-structure.md)
+
+---
+
 ### Hyper V Network Diagram
 
 ![Network Diagram](images/Riverside%20Virtual%20Topology.drawio.png)\
