@@ -97,22 +97,6 @@ DC=riverside,DC=local
 
 ![OU Creation Script](images/CreateOU.png)
 
-
-##  User Attribute Management Strategy
-
-Users will be created with a PowerShell script that automatically populates user attributes based on their OU path. These attributes will be used to:
-
-- Target users for Group Policy, software deployments, and security groups
-- Simplify reporting and auditing
-
-| Attribute     | Value Example           | Source                     |
-| ------------- | ----------------------- | -------------------------- |
-| `Title`       | Scanning Operator       | Derived from OU hierarchy  |
-| `Department`  | Scanning                | Manual or scripted         |
-| `Office`      | Manchester              | Scripted based on site OU  |
-| `Company`     | Riverside Manufacturing | Static                     |
-| `Description` | Optional                | Notes (e.g., "Contractor") |
-
 ---
 
 ##  Targeting Use Cases
