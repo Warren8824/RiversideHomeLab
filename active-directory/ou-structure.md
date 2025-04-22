@@ -95,6 +95,9 @@ DC=riverside,DC=local
 
 > The OU structure can be created using the [Create OU](../env-build-scripts/05CreateOUStructure_DC01.ps1) script.
 
+![OU Creation Script](images/CreateOU.png)
+
+
 ##  User Attribute Management Strategy
 
 Users will be created with a PowerShell script that automatically populates user attributes based on their OU path. These attributes will be used to:
@@ -135,8 +138,8 @@ Users will be created with a PowerShell script that automatically populates user
 ##  Progress Tracking (Checklist)
 
 | Task                                      | Status |
-| ----------------------------------------- | ------ |
-| OU structure implemented                  | [  ]   |
+| ----------------------------------------- |--------|
+| OU structure implemented                  | [ X ]  |
 | Attribute scripting complete              | [  ]   |
 | Group Policy applied to at least one dept | [  ]   |
 | Delegation for site managers tested       | [  ]   |
