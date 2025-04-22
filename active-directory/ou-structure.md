@@ -93,6 +93,8 @@ DC=riverside,DC=local
 
 ---
 
+> The OU structure can be created using the []
+
 ##  User Attribute Management Strategy
 
 Users will be created with a PowerShell script that automatically populates user attributes based on their OU path. These attributes will be used to:

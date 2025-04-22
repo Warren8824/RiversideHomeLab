@@ -151,7 +151,7 @@ On DC01:
 | HUL            | 10.90.40.1     | 255.255.255.0  | (leave blank)   | 10.90.10.1       |
 | NATSwitch      | 192.168.100.2  | 255.255.255.0  | 192.168.100.1   | 8.8.8.8 / 8.8.4.4|
 
-> Automate Step 3: [Configure DC01 Network Cards](../env-build-scripts/03DCNICConfig.ps1) script.
+> Automate Step 3: [Configure DC01 Network Cards](../env-build-scripts/03DCNICConfig_DC01.ps1) script.
 
 ---
 
