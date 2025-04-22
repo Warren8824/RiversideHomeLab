@@ -56,4 +56,4 @@ foreach ($dept in $hoDepts) {
     New-CheckedOU -Name "Computers" -ParentDN $base
 }
 
-Write-Host "`n✅ OU structure build completed successfully!" -ForegroundColor Green
+Write-Host "OU structure build completed successfully!" -ForegroundColor Green
