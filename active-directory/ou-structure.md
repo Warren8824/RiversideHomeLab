@@ -93,7 +93,7 @@ DC=riverside,DC=local
 
 ---
 
-> The OU structure can be created using the []
+> The OU structure can be created using the [Create OU](../env-build-scripts/05CreateOUStructure_DC01.ps1) script.
 
 ##  User Attribute Management Strategy
 

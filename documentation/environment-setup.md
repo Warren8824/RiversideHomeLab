@@ -166,7 +166,7 @@ On DC01:
   - Remote Access
 - Install required management tools.
 
-> Automate Step 4a: [Change PC name and Add roles](../env-build-scripts/04RenameandAddRoles.ps1) script.
+> Automate Step 4a: [Change PC name and Add roles](../env-build-scripts/04RenameandAddRoles_DC01.ps1) script.
 
 #### Domain Setup - 4b:
 
@@ -175,7 +175,7 @@ On DC01:
 - Use default NetBIOS name.
 - Restart when prompted.
 
-> Automate Step 4b: [Domain Setup](../env-build-scripts/04bADDSSetup.ps1) script.
+> Automate Step 4b: [Domain Setup](../env-build-scripts/04bADDSSetup_DC01.ps1) script.
 
 ---
 
