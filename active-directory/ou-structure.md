@@ -130,7 +130,8 @@ DC=riverside,DC=local
 
 > The OU structure can be created using the [Create OU](../env-build-scripts/05CreateOUStructure_DC01.ps1) script.
 
-![OU Creation Script](images/CreateOU.png)
+![OU Creation Script](images/CreateOU.png)\
+![Active Directory DC01 - Organisational Units](images/ADOUStructureDC01.png)
 
 ---
 
