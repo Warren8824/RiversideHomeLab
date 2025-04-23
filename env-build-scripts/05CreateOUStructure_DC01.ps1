@@ -47,8 +47,8 @@ foreach ($site in $sites) {
 
 # Create Head Office departments
 $hoDepts = @("IT", "Finance", "Executive", "Management")
+$deptDN = "OU=HeadOffice,$domain"
 foreach ($dept in $hoDepts) {
-    $deptDN = "OU=HeadOffice,$domain"
     New-CheckedOU -Name $dept -ParentDN $deptDN
 
     $base = "OU=$dept,OU=HeadOffice,$domain"
