@@ -121,15 +121,15 @@ DC=riverside,DC=local
 
 ##  Progress Tracking (Checklist)
 
-| Task                                      | Status |
-| ----------------------------------------- |--------|
-| OU structure implemented                  | [ X ]  |
-| Attribute scripting complete              | [  ]   |
+| Task                                     | Status |
+|------------------------------------------|--------|
+| OU structure implemented                 | [ X ]  |
+| Group Design finalised                   | [  ]   |
 | Group Policy applied to at least one dept | [  ]   |
-| Delegation for site managers tested       | [  ]   |
-| Security groups populated                 | [  ]   |
-| Sample user creation tested               | [  ]   |
-| GPO filtering using attributes verified   | [  ]   |
+| Delegation for site managers tested      | [  ]   |
+| Security groups populated                | [  ]   |
+| Sample user creation tested              | [  ]   |
+| GPO filtering using attributes verified  | [  ]   |
 
 ---
 
