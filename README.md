@@ -6,6 +6,8 @@ The purpose of this lab is to deepen my understanding of Windows Server administ
 
 Everything here has been self-taught, built from scratch on personal hardware, and is meant to serve as both a learning aid and a reference I can expand on over time.
 
+![DC01](documentation/images/DC01.png)
+
 ---
 
 ## 🧰 What’s in the Lab?
