@@ -1,3 +1,26 @@
+<#
+.SYNOPSIS
+    Creates and configures a Generation 2 Hyper-V VM for Windows Server 2025 installation.
+.DESCRIPTION
+    This script prompts the user for a Windows Server 2025 ISO path and:
+    - Validates the ISO path
+    - Creates a new Generation 2 VM (if it doesn’t already exist)
+    - Assigns static memory and dynamic VHD
+    - Mounts the specified ISO as a virtual DVD
+    - Adds a network adapter connected to the "NATSwitch"
+    
+    Default values:
+    - VM Name: DC01
+    - Startup Memory: 4GB (static)
+    - VHD Size: 80GB
+    - VM Root Path: D:\VirtualMachines
+
+    NOTE: Assumes that 'NATSwitch' exists and was created previously.
+
+.EXAMPLE
+    .\02CreateDCVM_Host.ps1
+#>
+
 param (
     [string]$VMName = "DC01",
     [long]$MemoryStartupBytes = 4GB,  # long required to avoid error converting to int32
