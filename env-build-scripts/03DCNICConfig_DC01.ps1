@@ -1,4 +1,17 @@
-# DC_Network_Config.ps1
+<#
+.SYNOPSIS
+    Renames and statically configures IP addresses for a Domain Controller's NICs.
+.DESCRIPTION
+    This script auto-renames NICs based on site-specific patterns and applies static
+    IP settings for each interface including NAT configuration. Useful for multi-site
+    homelabs or AD test environments using Hyper-V.
+
+    Sites:
+    - MAN, LEE, LIV, HUL, NAT
+
+.EXAMPLE
+    .\DC_Network_Config_DC01.ps1
+#>
 
 # Mapping for NIC rename
 $nicRenameMap = @{
