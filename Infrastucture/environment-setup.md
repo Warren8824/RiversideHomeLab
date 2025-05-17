@@ -98,7 +98,7 @@ Open Hyper-V Manager > Virtual Switch Manager
 ### Step 1b:
 
 - Create one Internal switch: `NATSwitch` and configure static IP of `192.168.100.1/24` on Host 
-- > Automate Step 1b: [Create NAT and Config](../env-build-scripts/01ImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1) script.
+- > Automate Step 1b: [Create NAT and Config](../build-scripts/01ImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1) script.
 
 ---
 
@@ -112,7 +112,7 @@ Open Hyper-V Manager > Virtual Switch Manager
 
 In VM Settings:
 - Add NATSwitch 
-- > Automate Step 2a: [Create DC VM](../env-build-scripts/02CreateDCVM_Host.ps1) script.
+- > Automate Step 2a: [Create DC VM](../build-scripts/02CreateDCVM_Host.ps1) script.
 
 #### Step 2b:
 
@@ -151,7 +151,7 @@ On DC01:
 | HUL            | 10.90.40.1     | 255.255.255.0  | (leave blank)   | 10.90.10.1       |
 | NATSwitch      | 192.168.100.2  | 255.255.255.0  | 192.168.100.1   | 8.8.8.8 / 1.1.1.1|
 
-> Automate Step 3: [Configure DC01 Network Cards](../env-build-scripts/03DCNICConfig_DC01.ps1) script.
+> Automate Step 3: [Configure DC01 Network Cards](../build-scripts/03DCNICConfig_DC01.ps1) script.
 
 ---
 
@@ -166,7 +166,7 @@ On DC01:
   - Remote Access
 - Install required management tools.
 
-> Automate Step 4a: [Change PC name and Add roles](../env-build-scripts/04RenameandAddRoles_DC01.ps1) script.
+> Automate Step 4a: [Change PC name and Add roles](../build-scripts/04RenameandAddRoles_DC01.ps1) script.
 
 #### Domain Setup - 4b:
 
@@ -175,7 +175,7 @@ On DC01:
 - Use default NetBIOS name.
 - Restart when prompted.
 
-> Automate Step 4b: [Domain Setup](../env-build-scripts/04bADDSSetup_DC01.ps1) script.
+> Automate Step 4b: [Domain Setup](../build-scripts/04bADDSSetup_DC01.ps1) script.
 
 ---
 

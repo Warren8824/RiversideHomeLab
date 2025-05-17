@@ -6,7 +6,7 @@ The purpose of this lab is to deepen my understanding of Windows Server administ
 
 Everything here has been self-taught, built from scratch on personal hardware, and is meant to serve as both a learning aid and a reference I can expand on over time.
 
-![DC01](documentation/images/DC01.png)
+![DC01](Infrastucture/images/DC01.png)
 
 ---
 
@@ -90,7 +90,7 @@ Improving troubleshooting and documentation skills
 The goal is to become more capable, resourceful, and confident in the areas I already work in — and to grow beyond that.
 
 ## ⚙️ Current Setup
-You can view the current network layout, addressing scheme, and server configurations in the [environment-setup.md](documentation/environment-setup.md) and related files.
+You can view the current network layout, addressing scheme, and server configurations in the [environment-setup.md](Infrastucture/environment-setup.md) and related files.
 
 💡 I’ll keep this repository updated as I expand the lab and experiment with new configurations.
 
