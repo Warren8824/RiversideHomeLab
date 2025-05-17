@@ -166,7 +166,7 @@ On DC01:
   - Remote Access
 - Install required management tools.
 
-> Automate Step 4a: [Change PC name and Add roles](../build-scripts/04RenameandAddRoles_DC01.ps1) script.
+> Automate Step 4a: [Change PC name and Add roles](../build-scripts/04aRenameandAddRoles_DC01.ps1) script.
 
 #### Domain Setup - 4b:
 

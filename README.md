@@ -4,7 +4,7 @@ This repository documents my self-built Hyper-V home lab environment — a multi
 
 The purpose of this lab is to deepen my understanding of Windows Server administration, networking fundamentals, Active Directory, DHCP/DNS configuration, GPOs, and IT helpdesk-related tasks. I'm currently working in a helpdesk role, and I'm using this time to reinforce my hands-on knowledge with solid examples and a documented setup.
 
-Everything here has been self-taught, built from scratch on personal hardware, and is meant to serve as both a learning aid and a reference I can expand on over time.
+Everything here has been built from scratch on personal hardware, and is meant to serve as both a learning aid and a reference I can expand on over time.
 
 ![DC01](infrastucture/images/DC01.png)
 
@@ -35,8 +35,8 @@ This setup includes:
 ```plaintext
 riverside-lab/
 ├── README.md                                       # This file
-├── documentation/                                  # Core setup documentation
-│   ├── images/                                     # Visual network layout and config images - Linked throughout
+├── infrastucture/                                  # Hyper-V setup documentation
+│   ├── images/                                     
 |   |   ├── DC01Creation.png
 |   |   └── VSwitches.png etc.
 │   ├── environment-setup.md                        # Step-by-step lab build guide
@@ -45,34 +45,34 @@ riverside-lab/
 |   ├── Riverside Physical Topology.drawio.png      # Physical Diagram of what I intend the Lab to simulate
 │   └── Riverside Virtual Topology.drawio.png       # Visual Description of the Hyper V Setup used
 ├── active-directory/                               # AD setup and scripts
-│   ├── ou-structure.md
-│   ├── security-groups.md
-│   ├── sample-users.md
-│   └── scripts/
-│       ├── create-ou-structure.ps1
-│       ├── create-test-users.ps1
-│       └── create-security-groups.ps1
-├── group-policy/                  # GPO setup and screenshots
-│   ├── gpo-inventory.md
-│   ├── security-baseline.md
-│   └── screenshots/
-├── file-server/                   # Shared folder setup
-│   ├── folder-structure.md
-│   ├── permissions-matrix.md
-│   └── scripts/
-├── env-build-scripts/             # PowerShell scripts used for building system
-│   ├── ADDSSetupforRiverside.ps1  # Script that will complete the ADDS setup forRiverside after installing role
-├── skill-journal/                 # Learning log
-│   ├── week1-active-directory.md
-│   ├── week2-group-policy.md
-│   └── helpdesk-scenarios/
-│       ├── password-reset.md
-│       ├── account-unlock.md
-│       └── group-management.md
-└── projects/                      # Mini-projects showing applied skills
-    ├── automated-onboarding/
-    ├── security-audit/
-    └── monitoring-setup/
+│   ├── images/
+│   ├── ou-structure.md                             # Full description of OU design
+│   ├── security-groups.md                          # TO DO
+│   └── sample-users.md                             # LLM generated user list
+├── group-policy/                                   # GPO setup and screenshots
+│   ├── images/                            
+│   ├── gpo-inventory.md                            # TO DO
+│   └── security-baseline.md                        # TO DO
+├── file-server/                                    # Shared folder setup
+│   ├── images/
+│   ├── folder-structure.md                         # TO DO
+│   └── permissions-matrix.md                       # TO DO
+├── build-scripts/                                  # PowerShell scripts used in building the system
+│   ├── 01ImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1  
+│   ├── 02CreateDCVM_Host.ps1
+│   ├── 03DCNICConfig_DC01.ps1
+│   ├── 04aRenameandAddRoles_DC01.ps1
+│   ├── 04bADDSSetup_DC01.ps1
+│   ├── 05CreateOUStructure_DC01.ps1
+├── helpdesk-scenarios/                             # Realistic learning scenarios
+│   ├── password-reset.md                           # TO DO
+│   ├── account-unlock.md                           # TO DO
+│   ├── modified-access.md                          # TO DO
+│   └── group-management.md                         # TO DO
+└── projects/                                       # Mini-projects
+    ├── automated-onboarding/                       # TO DO
+    ├── security-audit/                             # TO DO
+    └── monitoring-setup/                           # TO DO
 ```
 
 ## 🔍 Why This Lab?
