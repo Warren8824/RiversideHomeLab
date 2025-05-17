@@ -128,7 +128,7 @@ DC=riverside,DC=local
 
 ---
 
-> The OU structure can be created using the [Create OU](../build-scripts/05CreateOUStructure_DC01.ps1) script.
+> The OU structure can be created using the [Create OU](../build-scripts/05CreateOUStructure_DC01.ps1) script.\
 
 
 ![OU Creation Script](images/CreateOU.png)\
