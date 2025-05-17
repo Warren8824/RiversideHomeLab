@@ -122,6 +122,9 @@ DC=riverside,DC=local
 |         |-- OU=Computers
 |
 |-- OU=Groups
+|    |-- OU=GlobalGroups
+|    |-- OU=DomainLocalGroups
+|    |-- OU=AdministrativeGroups
 |-- OU=ServiceAccounts
 |-- OU=Admin
 ```
