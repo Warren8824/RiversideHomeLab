@@ -12,7 +12,7 @@
     NOTE: Private switches (MAN-SW01, LEE-SW01, LIV-SW01, HUL-SW01) should be created manually beforehand.
 
 .EXAMPLE
-    .\01ImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1
+    .\01aImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1
 #>
 
 # Ensure script is running as Administrator
