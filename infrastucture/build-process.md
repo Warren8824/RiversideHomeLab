@@ -26,7 +26,7 @@ Open Hyper-V Manager > Virtual Switch Manager
 
 In VM Settings:
 - Add NATSwitch 
-- > Automate Step 2a: [Create DC VM](../build-scripts/02CreateDCVM_Host.ps1) script.
+- > Automate Step 2a: [Create DC VM](../build-scripts/02aCreateDCVM_Host.ps1) script.
 
 #### Step 2b:
 
@@ -66,7 +66,7 @@ On DC01:
 | HUL            | 10.90.40.1     | 255.255.255.0  | (leave blank)   | 10.90.10.1       |
 | NATSwitch      | 192.168.100.2  | 255.255.255.0  | 192.168.100.1   | 8.8.8.8 / 1.1.1.1|
 
-> Automate Step 3b on DC01: [Configure DC01 Network Cards](../build-scripts/03DCNICConfig_DC01.ps1) script.
+> Automate Step 3b on DC01: [Configure DC01 Network Cards](../build-scripts/03bDCNICConfig_DC01.ps1) script.
 
 ---
 
@@ -83,7 +83,7 @@ On DC01:
 
 > Automate Step 4a: [Change PC name and Add roles](../build-scripts/04aRenameandAddRoles_DC01.ps1) script.
 
-#### Domain Setup - 4b:
+### Step 4b: Domain Setup
 
 - Create **new forest**: `riverside.local`
 - Set a secure **Directory Services Restore Mode (DSRM)** password (not shown).
@@ -112,7 +112,11 @@ Repeat for each site:
 | Gateway            | 10.90.x.1              |
 | DNS Server         | 10.90.10.1             |
 
-> Ensure all scopes are active and assigned to the correct interfaces.
+- Right-Click each scope > Properties > DNS > Ensure "Always dynamically update DNS records" is selected.
+> Automate step 5: [DHCP Setup](../build-scripts/05CreateDHCPScopes_DC01.ps1) Script.\
+
+![DHCP Settings](images/DHCPSettings.png)
+*Ensure all scopes are active and assigned to the correct interfaces.*
 
 ---
 
