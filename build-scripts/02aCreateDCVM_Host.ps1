@@ -18,7 +18,7 @@
     NOTE: Assumes that 'NATSwitch' exists and was created previously.
 
 .EXAMPLE
-    .\02CreateDCVM_Host.ps1
+    .\02aCreateDCVM_Host.ps1
 #>
 
 param (
