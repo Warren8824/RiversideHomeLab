@@ -113,11 +113,11 @@ Repeat for each site:
 | DNS Server         | 10.90.10.1             |
 
 - Right-Click each scope > Properties > DNS > Ensure "Always dynamically update DNS records" is selected.
-> Automate step 5: [DHCP Setup](../build-scripts/05CreateDHCPScopes_DC01.ps1) Script.\
 
 ![DHCP Settings](images/DHCPSettings.png)
 *Ensure all scopes are active and assigned to the correct interfaces.*
 
+> Automate step 5: [DHCP Setup](../build-scripts/05CreateDHCPScopes_DC01.ps1) Script.
 ---
 
 ### Step 6: Configure DNS
