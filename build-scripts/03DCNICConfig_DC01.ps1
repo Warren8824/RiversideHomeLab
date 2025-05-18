@@ -64,7 +64,7 @@ foreach ($nic in $ipConfigs.Keys) {
     }
 
     # Disable IPv6 for this interface
-    Write-Host "     Disabling IPv6 on $nic interface" -ForegroundColor Yellow
+    Write-Host "     Disabling IPv6 on $nic interface" -ForegroundColor Cyan
     $interfaceIndex = (Get-NetAdapter -Name $nic).ifIndex
     Set-NetAdapterBinding -InterfaceAlias $nic -ComponentID "ms_tcpip6" -Enabled $false
     # Alternative method using registry in case the above doesn't work
@@ -73,4 +73,3 @@ foreach ($nic in $ipConfigs.Keys) {
     Write-Host "[OK] Disabled IPv6 on $nic" -ForegroundColor Green
 }
 Write-Host "Networking configuration complete." -ForegroundColor Cyan
-Write-Host "IPv6 has been disabled on all configured interfaces." -ForegroundColor Cyan
