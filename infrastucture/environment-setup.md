@@ -122,13 +122,12 @@ Manually Add network cards to the private switches to the VM using Hyper V setti
 - Add Hardware > Network Adapter > Click Add
 - Select each of the private switches from the virtual switch dropdown and click apply
 - Add all switches and Click OK
-
-Start DC01 and install the OS.
+- Start DC01 and install the OS.
 
 > Step 2b needs completing manually on the host machine.
 ---
 
-### Step 3: Configure Networking
+### Step 3a: Rename NIC`s to suitable names
 
 On DC01:
 
@@ -141,7 +140,9 @@ On DC01:
 ![NIC MAC Adress](images/NICMatching.png)\
 *This can be matched on te NIC details on DC01 by double-clicking a NIC, then clicking Details and looking for the MAC address.*
 
-#### IP Configuration (Static):
+> Step 3a Needs completing manually.
+
+#### Step 3b: IP Configuration (Static):
 
 | NIC Role       | IP Address     | Subnet         | Gateway         | DNS              |
 |----------------|----------------|----------------|------------------|------------------|
@@ -151,7 +152,7 @@ On DC01:
 | HUL            | 10.90.40.1     | 255.255.255.0  | (leave blank)   | 10.90.10.1       |
 | NATSwitch      | 192.168.100.2  | 255.255.255.0  | 192.168.100.1   | 8.8.8.8 / 1.1.1.1|
 
-> Automate Step 3: [Configure DC01 Network Cards](../build-scripts/03DCNICConfig_DC01.ps1) script.
+> Automate Step 3b on DC01: [Configure DC01 Network Cards](../build-scripts/03DCNICConfig_DC01.ps1) script.
 
 ---
 
