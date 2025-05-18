@@ -132,6 +132,7 @@ Set each to:
 - Zone Name: Based on subnet (e.g. `10.90.10`)
 - Dynamic Updates: Secure only
 
+> Automate step 6: [DNS Setup](../build-scripts/06CreateDNSZones_DC01.ps1) Script.
 ---
 
 ### Step 7: Setup RRAS (Routing & NAT)
