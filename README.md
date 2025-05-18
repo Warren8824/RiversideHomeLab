@@ -39,12 +39,15 @@ riverside-lab/
 │   ├── images/                                     
 |   |   ├── DC01Creation.png
 |   |   └── VSwitches.png etc.
-│   ├── environment-setup.md                        # Step-by-step lab build guide
+│   ├── build-process.md                        # Step-by-step lab build guide
+│   ├── environment-setup.md                        # Full description of lab setup
 |   ├── hardware-specs.md                           # Lab host machine details
 │   ├── ip-addressing-scheme.md                     # IP/subnet breakdown
 |   ├── Riverside Physical Topology.drawio.png      # Physical Diagram of what I intend the Lab to simulate
 │   └── Riverside Virtual Topology.drawio.png       # Visual Description of the Hyper V Setup used
 ├── active-directory/                               # AD setup and scripts
+│   ├── build-scripts/
+|   │   ├── 01CreateOUStructure_DC01.ps1
 │   ├── images/
 │   ├── ou-structure.md                             # Full description of OU design
 │   ├── security-groups.md                          # TO DO
@@ -63,7 +66,9 @@ riverside-lab/
 │   ├── 03DCNICConfig_DC01.ps1
 │   ├── 04aRenameandAddRoles_DC01.ps1
 │   ├── 04bADDSSetup_DC01.ps1
-│   ├── 05CreateOUStructure_DC01.ps1
+│   ├── 05CreateDHCPScopes_DC01.ps1
+│   ├── 06CreateDNSZones_DC01.ps1
+│   └── 07RRASSetup_DC01.ps1                        # TO DO
 ├── helpdesk-scenarios/                             # Realistic learning scenarios
 │   ├── password-reset.md                           # TO DO
 │   ├── account-unlock.md                           # TO DO
