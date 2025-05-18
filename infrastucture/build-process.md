@@ -132,10 +132,6 @@ Set each to:
 - Zone Name: Based on subnet (e.g. `10.90.10`)
 - Dynamic Updates: Secure only
 
-For each DHCP scope:
-- Enable dynamic DNS updates
-- Enable updates for clients not requesting DNS
-
 ---
 
 ### Step 7: Setup RRAS (Routing & NAT)
