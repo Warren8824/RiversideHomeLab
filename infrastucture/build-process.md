@@ -85,6 +85,7 @@ On DC01:
 
 ### Step 4b: Domain Setup
 
+- Promote VM to domain controller
 - Create **new forest**: `riverside.local`
 - Set a secure **Directory Services Restore Mode (DSRM)** password (not shown).
 - Use default NetBIOS name.

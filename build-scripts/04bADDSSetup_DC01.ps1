@@ -1,9 +1,9 @@
 #
-# Windows PowerShell script for AD DS Deployment
+# Windows PowerShell script for AD DS Deployment and promote to DC
 #
-
-Import-Module ADDSDeployment
-Install-ADDSForest `
+# Deploy AD DS
+Import-Module ADDSDeployment # promote to domain controller
+Install-ADDSForest `         # Configure new forest
 -CreateDnsDelegation:$false `
 -DatabasePath "C:\WINDOWS\NTDS" `
 -DomainMode "Win2025" `
