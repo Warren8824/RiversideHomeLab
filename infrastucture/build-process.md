@@ -1,12 +1,12 @@
 # Build Process (Step-by-Step)
 
-### Step 1a:
+### Step 1a: Create Virtual Switches
+
 
 - Create one Internal switch: `NATSwitch` and configure static IP of `192.168.100.1/24` on Host 
 - > Automate Step 1a: [Create NAT and Config](../build-scripts/01aImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1) script.
 
-### Step 1b: Create Virtual Switches
-
+### Step 1b: 
 Open Hyper-V Manager > Virtual Switch Manager
 
 - Create four Private switches: `MAN-SW01`, `LEE-SW01`, `LIV-SW01`, `HUL-SW01`
