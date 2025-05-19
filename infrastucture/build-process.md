@@ -4,7 +4,7 @@
 
 
 - Create one Internal switch: `NATSwitch` and configure static IP of `192.168.100.1/24` on Host 
-- > Automate Step 1a: [Create NAT and Config](../build-scripts/01aImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1) script.
+- > Automate Step 1a: [Create NAT and Config](build-scripts/01aImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1) script.
 
 ### Step 1b: 
 Open Hyper-V Manager > Virtual Switch Manager
@@ -26,7 +26,7 @@ Open Hyper-V Manager > Virtual Switch Manager
 
 In VM Settings:
 - Add NATSwitch 
-- > Automate Step 2a: [Create DC VM](../build-scripts/02aCreateDCVM_Host.ps1) script.
+- > Automate Step 2a: [Create DC VM](build-scripts/02aCreateDCVM_Host.ps1) script.
 
 #### Step 2b:
 
@@ -66,7 +66,7 @@ On DC01:
 | HUL            | 10.90.40.1     | 255.255.255.0  | (leave blank)   | 10.90.10.1       |
 | NATSwitch      | 192.168.100.2  | 255.255.255.0  | 192.168.100.1   | 8.8.8.8 / 1.1.1.1|
 
-> Automate Step 3b on DC01: [Configure DC01 Network Cards](../build-scripts/03bDCNICConfig_DC01.ps1) script.
+> Automate Step 3b on DC01: [Configure DC01 Network Cards](build-scripts/03bDCNICConfig_DC01.ps1) script.
 
 ---
 
@@ -81,7 +81,7 @@ On DC01:
   - Remote Access
 - Install required management tools.
 
-> Automate Step 4a: [Change PC name and Add roles](../build-scripts/04aRenameandAddRoles_DC01.ps1) script.
+> Automate Step 4a: [Change PC name and Add roles](build-scripts/04aRenameandAddRoles_DC01.ps1) script.
 
 ### Step 4b: Domain Setup
 
@@ -91,7 +91,7 @@ On DC01:
 - Use default NetBIOS name.
 - Restart when prompted.
 
-> Automate Step 4b: [Domain Setup](../build-scripts/04bADDSSetup_DC01.ps1) script.
+> Automate Step 4b: [Domain Setup](build-scripts/04bADDSSetup_DC01.ps1) script.
 
 ---
 
@@ -118,7 +118,7 @@ Repeat for each site:
 ![DHCP Settings](images/DHCPSettings.png)
 *Ensure all scopes are active and assigned to the correct interfaces.*
 
-> Automate step 5: [DHCP Setup](../build-scripts/05CreateDHCPScopes_DC01.ps1) Script.
+> Automate step 5: [DHCP Setup](build-scripts/05CreateDHCPScopes_DC01.ps1) Script.
 ---
 
 ### Step 6: Configure DNS
@@ -133,7 +133,7 @@ Set each to:
 - Zone Name: Based on subnet (e.g. `10.90.10`)
 - Dynamic Updates: Secure only
 
-> Automate step 6: [DNS Setup](../build-scripts/06CreateDNSZones_DC01.ps1) Script.
+> Automate step 6: [DNS Setup](build-scripts/06CreateDNSZones_DC01.ps1) Script.
 ---
 
 ### Step 7: Setup RRAS (Routing & NAT)

@@ -36,9 +36,16 @@ This setup includes:
 riverside-lab/
 ├── README.md                                       # This file
 ├── infrastucture/                                  # Hyper-V setup documentation
+│   ├── build-scripts/                              # PowerShell scripts used in building the system
+|   |   ├── 01ImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1  
+|   |   ├── 02CreateDCVM_Host.ps1
+|   |   ├── 03DCNICConfig_DC01.ps1
+|   |   ├── 04aRenameandAddRoles_DC01.ps1
+|   |   ├── 04bADDSSetup_DC01.ps1
+|   |   ├── 05CreateDHCPScopes_DC01.ps1
+|   |   ├── 06CreateDNSZones_DC01.ps1
+|   |   └── 07RRASSetup_DC01.ps1                    # TO DO
 │   ├── images/                                     
-|   |   ├── DC01Creation.png
-|   |   └── VSwitches.png etc.
 │   ├── build-process.md                            # Step-by-step lab build guide
 │   ├── environment-setup.md                        # Full description of lab setup
 |   ├── hardware-specs.md                           # Lab host machine details
@@ -60,15 +67,6 @@ riverside-lab/
 │   ├── images/
 │   ├── folder-structure.md                         # TO DO
 │   └── permissions-matrix.md                       # TO DO
-├── build-scripts/                                  # PowerShell scripts used in building the system
-│   ├── 01ImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1  
-│   ├── 02CreateDCVM_Host.ps1
-│   ├── 03DCNICConfig_DC01.ps1
-│   ├── 04aRenameandAddRoles_DC01.ps1
-│   ├── 04bADDSSetup_DC01.ps1
-│   ├── 05CreateDHCPScopes_DC01.ps1
-│   ├── 06CreateDNSZones_DC01.ps1
-│   └── 07RRASSetup_DC01.ps1                        # TO DO
 ├── helpdesk-scenarios/                             # Realistic learning scenarios
 │   ├── password-reset.md                           # TO DO
 │   ├── account-unlock.md                           # TO DO
