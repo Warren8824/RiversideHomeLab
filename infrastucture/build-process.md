@@ -151,6 +151,7 @@ Set each to:
   - Public Interface Connected to Internet
   - Enable NAT on this interface
 
+> Automate step 7: [RRAS Setup](build-scripts/07RRASSetup_DC01.ps1) Script.
 Restart the server.
 
 ---
