@@ -44,7 +44,7 @@ riverside-lab/
 |   |   ├── 04bADDSSetup_DC01.ps1
 |   |   ├── 05CreateDHCPScopes_DC01.ps1
 |   |   ├── 06CreateDNSZones_DC01.ps1
-|   |   └── 07RRASSetup_DC01.ps1                    # TO DO
+|   |   └── 07RRASSetup_DC01.ps1                    
 │   ├── images/                                     
 │   ├── build-process.md                            # Step-by-step lab build guide
 │   ├── environment-setup.md                        # Full description of lab setup
