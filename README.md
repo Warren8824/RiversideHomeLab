@@ -6,7 +6,7 @@ The purpose of this lab is to deepen my understanding of Windows Server administ
 
 Everything here has been built from scratch on personal hardware, and is meant to serve as both a learning aid and a reference I can expand on over time.
 
-![DC01](infrastucture/images/DC01.png)
+![DC01](01-infrastucture/images/DC01.png)
 
 ---
 
@@ -35,7 +35,7 @@ This setup includes:
 ```plaintext
 riverside-lab/
 ├── README.md                                       # This file
-├── infrastucture/                                  # Hyper-V setup documentation
+├── 01-infrastucture/                                  # Hyper-V setup documentation
 │   ├── build-scripts/                              # PowerShell scripts used in building the system
 |   |   ├── 01ImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1  
 |   |   ├── 02CreateDCVM_Host.ps1
@@ -52,27 +52,27 @@ riverside-lab/
 │   ├── ip-addressing-scheme.md                     # IP/subnet breakdown
 |   ├── Riverside Physical Topology.drawio.png      # Physical Diagram of what I intend the Lab to simulate
 │   └── Riverside Virtual Topology.drawio.png       # Visual Description of the Hyper V Setup used
-├── active-directory/                               # AD setup and scripts
+├── 02-active-directory/                               # AD setup and scripts
 │   ├── build-scripts/
 |   │   ├── 01CreateOUStructure_DC01.ps1
 │   ├── images/
 │   ├── ou-structure.md                             # Full description of OU design
 │   ├── security-groups.md                          # TO DO
 │   └── sample-users.md                             # LLM generated user list
-├── group-policy/                                   # GPO setup and screenshots
+├── 03-group-policy/                                   # GPO setup and screenshots
 │   ├── images/                            
 │   ├── gpo-inventory.md                            # TO DO
 │   └── security-baseline.md                        # TO DO
-├── file-server/                                    # Shared folder setup
+├── 04-file-server/                                    # Shared folder setup
 │   ├── images/
 │   ├── folder-structure.md                         # TO DO
 │   └── permissions-matrix.md                       # TO DO
-├── helpdesk-scenarios/                             # Realistic learning scenarios
+├── 05-helpdesk-scenarios/                             # Realistic learning scenarios
 │   ├── password-reset.md                           # TO DO
 │   ├── account-unlock.md                           # TO DO
 │   ├── modified-access.md                          # TO DO
 │   └── group-management.md                         # TO DO
-└── projects/                                       # Mini-projects
+└── 06-projects/                                       # Mini-projects
     ├── automated-onboarding/                       # TO DO
     ├── security-audit/                             # TO DO
     └── monitoring-setup/                           # TO DO
@@ -93,7 +93,7 @@ Improving troubleshooting and documentation skills
 The goal is to become more capable, resourceful, and confident in the areas I already work in — and to grow beyond that.
 
 ## ⚙️ Current Setup
-You can view the current network layout, addressing scheme, and server configurations in the [environment-setup.md](infrastucture/environment-setup.md) and related files.
+You can view the current network layout, addressing scheme, and server configurations in the [environment-setup.md](01-infrastucture/environment-setup.md) and related files.
 
 💡 I’ll keep this repository updated as I expand the lab and experiment with new configurations.
 

@@ -157,4 +157,4 @@ Restart the server.
 
 ---
 
-Then I moved on to the [AD Structure](../active-directory/ou-structure.md)
+Then I moved on to the [AD Structure](../02-active-directory/ou-structure.md)
