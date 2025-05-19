@@ -39,7 +39,7 @@ riverside-lab/
 │   ├── images/                                     
 |   |   ├── DC01Creation.png
 |   |   └── VSwitches.png etc.
-│   ├── build-process.md                        # Step-by-step lab build guide
+│   ├── build-process.md                            # Step-by-step lab build guide
 │   ├── environment-setup.md                        # Full description of lab setup
 |   ├── hardware-specs.md                           # Lab host machine details
 │   ├── ip-addressing-scheme.md                     # IP/subnet breakdown
