@@ -1,4 +1,4 @@
-##  `documentation/hardware-specs.md`
+##  Hardware-Specs
 
 ###  Purpose  
 This document outlines the physical hardware and virtual infrastructure used to run the simulated Riverside multi-site lab. It provides insight into system limitations, performance considerations, and how resources were allocated to achieve a functional Active Directory lab environment on a single host machine.
