@@ -20,7 +20,7 @@ function New-CheckedOU {
 
 # Sites and Departments
 $sites = @("Manchester", "Liverpool", "Sheffield", "Leeds")
-$departments = @("Scanning", "Machining", "3DPrinting", "Management")
+$departments = @("Scanning", "Machining", "3DPrinting", "Office")
 
 # Create root level OUs
 New-CheckedOU -Name "Sites" -ParentDN $domain
