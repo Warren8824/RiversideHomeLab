@@ -6,6 +6,8 @@
 
 ---
 
+> **Edit**: Renamed Management OU to Office to match group naming convention. All scripts updated.
+
 ## Overview
 
 Riverside Manufacturing is a multi-site engineering and production firm providing scanning, machining, and 3D printing services. With operations distributed across four main sites and a centralized Head Office in Manchester, a structured and scalable Active Directory (AD) Organizational Unit (OU) plan is essential for effective user, computer, group, and policy management.
@@ -65,7 +67,7 @@ DC=riverside,DC=local
 |    |    |-- OU=3DPrinting
 |    |    |    |-- OU=Users
 |    |    |    |-- OU=Computers
-|    |    |-- OU=Management
+|    |    |-- OU=Office
 |    |         |-- OU=Users
 |    |         |-- OU=Computers
 |    |-- OU=Leeds
@@ -78,7 +80,7 @@ DC=riverside,DC=local
 |    |    |-- OU=3DPrinting
 |    |    |    |-- OU=Users
 |    |    |    |-- OU=Computers
-|    |    |-- OU=Management
+|    |    |-- OU=Office
 |    |         |-- OU=Users
 |    |         |-- OU=Computers
 |    |-- OU=Liverpool
@@ -91,7 +93,7 @@ DC=riverside,DC=local
 |    |    |-- OU=3DPrinting
 |    |    |    |-- OU=Users
 |    |    |    |-- OU=Computers
-|    |    |-- OU=Management
+|    |    |-- OU=Office
 |    |         |-- OU=Users
 |    |         |-- OU=Computers
 |    |-- OU=Hull
@@ -104,7 +106,7 @@ DC=riverside,DC=local
 |    |    |-- OU=3DPrinting
 |    |    |    |-- OU=Users
 |    |    |    |-- OU=Computers
-|    |    |-- OU=Management
+|    |    |-- OU=Office
 |    |         |-- OU=Users
 |    |         |-- OU=Computers
 |-- OU=HeadOffice
@@ -112,9 +114,6 @@ DC=riverside,DC=local
 |    |    |-- OU=Users
 |    |    |-- OU=Computers
 |    |-- OU=Finance
-|    |    |-- OU=Users
-|    |    |-- OU=Computers
-|    |-- OU=Management
 |    |    |-- OU=Users
 |    |    |-- OU=Computers
 |    |-- OU=Executive
@@ -167,7 +166,7 @@ DC=riverside,DC=local
 | Task                                     | Status |
 |------------------------------------------|--------|
 | OU structure implemented                 | [ X ]  |
-| Group Design finalised                   | [  ]   |
+| Group Design finalised                   | [ X ]  |
 | Group Policy applied to at least one dept | [  ]   |
 | Delegation for site managers tested      | [  ]   |
 | Security groups populated                | [  ]   |
