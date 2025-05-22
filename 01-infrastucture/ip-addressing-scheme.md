@@ -1,4 +1,4 @@
-##  `documentation/ip-addressing-scheme.md`
+##  IP Addressing Scheme
 
 ###  Purpose  
 This document details the internal IP addressing scheme used across the virtual lab network. Each site (Manchester, Leeds, Liverpool, Hull) is logically segmented into its own subnet to simulate real-world office branch networking. The goal is to mirror common enterprise setups for Active Directory, DHCP, and inter-site routing practices.
