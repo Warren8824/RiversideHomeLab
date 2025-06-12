@@ -35,7 +35,7 @@ This setup includes:
 ```plaintext
 riverside-lab/
 ├── README.md                                       # This file
-├── 01-infrastucture/                                  # Hyper-V setup documentation
+├── 01-infrastucture/                              # Hyper-V setup documentation
 │   ├── build-scripts/                              # PowerShell scripts used in building the system
 |   |   ├── 01ImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1  
 |   |   ├── 02CreateDCVM_Host.ps1
@@ -52,14 +52,14 @@ riverside-lab/
 │   ├── ip-addressing-scheme.md                     # IP/subnet breakdown
 |   ├── Riverside Physical Topology.drawio.png      # Physical Diagram of what I intend the Lab to simulate
 │   └── Riverside Virtual Topology.drawio.png       # Visual Description of the Hyper V Setup used
-├── 02-active-directory/                               # AD setup and scripts
+├── 02-active-directory/                           # AD setup and scripts
 │   ├── build-scripts/
 |   │   ├── 01CreateOUStructure_DC01.ps1
 │   ├── images/
 │   ├── ou-structure.md                             # Full description of OU design
 │   ├── security-groups.md                          # TO DO
 │   └── sample-users.md                             # LLM generated user list
-├── 03-group-policy/                                   # GPO setup and screenshots
+├── 03-group-policy/                               # GPO setup and screenshots
 │   ├── images/                            
 │   ├── gpo-inventory.md                            # TO DO
 │   └── security-baseline.md                        # TO DO
