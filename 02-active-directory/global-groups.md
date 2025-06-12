@@ -409,3 +409,5 @@ This structure allows for:
 By keeping group memberships clean, avoiding unnecessary nesting, and maintaining consistent naming, this approach lays a solid foundation for managing a growing Active Directory environment in an enterprise-grade homelab or production network.
 
 ---
+
+[⬅️ Back to Lab Overview](../README.md) | [Next: Domain Local Groups ➡️](../02-active-directory/domain-local-groups.md)
