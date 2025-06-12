@@ -70,3 +70,5 @@ Dynamic disk size in Hyper V prevents full disk space being taken unless require
 - Adding NAT via RRAS on DC01 saved time over configuring firewall rules
 
 ---
+
+[⬅️ Back to Environment Setup](../01-infrastucture/environment-setup.md) | [Next: IP Addressing Scheme ➡️](../01-infrastucture/ip-addressing-scheme.md)
