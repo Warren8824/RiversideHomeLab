@@ -181,4 +181,4 @@ DC=riverside,DC=local
 - Future additions like External Users, Apprenticeships, or QA dept can be added easily
 - Azure AD Connect can map `Title`, `Office`, and `Department` to cloud attributes for hybrid use
 
-[⬅️ Back to Lab Overview](../README.md) | [Next: AD Structure ➡️](../02-active-directory/.md)
+[⬅️ Back to Lab Overview](../README.md) | [Next: Global Group Design ➡️](../02-active-directory/global-groups.md)
