@@ -127,4 +127,4 @@ This mirrors many core concepts seen in production networks across SMEs and larg
 
 ---
 
-[⬅️ Back to Lab Overview](../README.md) | [Next: AD Structure ➡️](../02-active-directory/ou-structure.md)
+[⬅️ Back to Lab Overview](../README.md) | [Next: AD Structure ➡️](../01-/hardware-specs.md)
