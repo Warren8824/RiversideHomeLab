@@ -6,6 +6,17 @@ The purpose of this lab is to deepen my understanding of Windows Server administ
 
 Everything here has been built from scratch on personal hardware, and is meant to serve as both a learning aid and a reference I can expand on over time.
 
+## 📊 Lab Progress Overview
+
+| Section                     | Status          | Details                                |
+|-----------------------------|-----------------|----------------------------------------|
+| Infrastructure Setup        | ✅ Complete     | Hyper-V, NAT, DC VM                    |
+| Active Directory Structure  | 🟡 In Progress  | OU design done, security groups next    |
+| Group Policies              | ⏳ Planned      | Inventory and baseline policies         |
+| File Server                 | ⏳ Planned      | Folder structure and permissions        |
+| Helpdesk Scenarios          | ⏳ Planned      | Realistic troubleshooting tasks         |
+| Mini-Projects               | ⏳ Planned      | Automation, security, monitoring        |
+
 ![DC01](01-infrastucture/images/DC01.png)
 
 ---
