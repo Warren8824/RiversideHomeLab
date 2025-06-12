@@ -101,3 +101,5 @@ The lab environment utilizes a single DNS server running on the multi-homed Doma
 
 ![Client with DHCP Lease](images/ipconfigMAN-LAP-01.png)\
 *This is the configuration handed to a client on the Manchester site subnet (10.90.10.x/24).*
+
+[⬅️ Back to Hardware Spec](../01-infrastucture/hardware-specs.md) | [Next: AD Structure ➡️](../02-active-directory/ou-structure.md)
