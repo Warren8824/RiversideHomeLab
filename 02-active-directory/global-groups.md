@@ -410,4 +410,4 @@ By keeping group memberships clean, avoiding unnecessary nesting, and maintainin
 
 ---
 
-[⬅️ Back to Lab Overview](../README.md) | [Next: Domain Local Groups ➡️](../02-active-directory/domain-local-groups.md)
+[⬅️ Back to OU Structure](../02-active-directory/ou-structure.md) | [Next: Domain Local Groups ➡️](../02-active-directory/domain-local-groups.md)
