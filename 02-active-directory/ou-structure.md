@@ -121,16 +121,13 @@ DC=riverside,DC=local
 |         |-- OU=Computers
 |
 |-- OU=Groups
-|    |-- OU=GlobalGroups
-|    |-- OU=DomainLocalGroups
-|    |-- OU=AdministrativeGroups
 |-- OU=ServiceAccounts
 |-- OU=Admin
 ```
 
 ---
 
-> The OU structure can be created using the [Create OU](build-scripts/01CreateOUStructure_DC01.ps1) script.\
+> This OU structure can be created using the [Create OU](build-scripts/01CreateOUStructure_DC01.ps1) script.\
 
 
 ![OU Creation Script](images/CreateOU.png)\
@@ -158,20 +155,6 @@ DC=riverside,DC=local
 - IT Manager (HO) has domain-wide delegated control over IT OU and all computers
 - Finance Manager has access to Finance OU only
 - CEO has read access to all user OUs and will employ IT department for structure changes
-
----
-
-##  Progress Tracking (Checklist)
-
-| Task                                     | Status |
-|------------------------------------------|--------|
-| OU structure implemented                 | [ X ]  |
-| Group Design finalised                   | [ X ]  |
-| Group Policy applied to at least one dept | [  ]   |
-| Delegation for site managers tested      | [  ]   |
-| Security groups populated                | [  ]   |
-| Sample user creation tested              | [  ]   |
-| GPO filtering using attributes verified  | [  ]   |
 
 ---
 
