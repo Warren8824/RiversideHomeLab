@@ -77,7 +77,7 @@ foreach ($site in $Sites) {
         }
     }
 }
-# CREATE HEAD OFFICE BASE GROUPS
+# CREATE HEAD OFFICE BASE GROUPS AND NESTING
 foreach ($dept in $HoDepartments) {
     foreach ($role in $UserRoles) {
         $base = "G_${HoSite}_${dept}_$role"
