@@ -61,7 +61,7 @@ Aggregates all roles for a department across sites (no nesting into global):
 
 ### 3. Site Roll‑Ups
 
-Aggregates all base and department members at a specific site:
+Aggregates all base members at a specific site:
 
 | Group Name           | Description                     |
 | -------------------- | ------------------------------- |
@@ -72,7 +72,7 @@ Aggregates all base and department members at a specific site:
 | `G_HO`               | All users at Head Office        |
 | `G_<SITE>_Computers` | All computers at specified site |
 
-Base groups and department roll‑ups are nested into their corresponding site group.
+Base groups are nested into their corresponding site group.
 
 ### 4. Global Groups
 
