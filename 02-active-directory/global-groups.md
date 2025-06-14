@@ -1,157 +1,413 @@
-# Global Security Group Structure & Inheritance Plan
-
-**Client:** Riverside Manufacturing - Fictional\
+# Active Directory Group Structure & Nesting Plan
+**Client:** Riverside Manufacturing – Fictional\
 **Prepared by:** Warren Bebbington\
-**Date:** 26/05/2025
+**Date:** 18/05/2025
+
+Overview
+To support Riverside Manufacturing’s distributed operations across Manchester, Leeds, Liverpool, Hull, and Head Office (HO), a robust Active Directory group design is implemented. This structure enables efficient access control, targeted policy application, and clear delegation aligned with site, department, and role. The approach ensures logical nesting, reusability, and scalability as the organisation evolves.
+
+This document outlines a comprehensive AD group structure that:
+
+- Adheres to the AGDLP model (Accounts > Global > Domain Local > Permissions)
+
+- Supports layered targeting by department, site, and function
+
+- Utilises consistent naming conventions for clarity and automation
+
+- Enables clear group membership and delegation auditing
+
+- Is extensible to future sites, departments, or cloud integration
+
+## Group Naming Convention
+Prefixes:
+
+- `G_` – Global groups (user membership-based)
+
+- `DL_` – Domain Local groups (used for resource permissions)
+
+Site Abbreviations:
+
+- `MAN` = Manchester
+
+- `LEE` = Leeds
+
+- `LIV` = Liverpool
+
+- `HUL` = Hull
+
+- `HO` = Head Office
+
+Department Labels:
+
+`Scanning`, `Machining`, `3DPrinting`, `IT`, `Finance`, `Executive`, `Site`
+
+## Global Groups – Base Membership
+These are the groups where actual user accounts are directly assigned.
+
+### Manchester Site
+- G_MAN_Scanning_Operators
+
+- G_MAN_Scanning_Managers
+
+- G_MAN_Machining_Operators
+
+- G_MAN_Machining_Managers
+
+- G_MAN_3DPrinting_Operators
+
+- G_MAN_3DPrinting_Managers
+
+- G_MAN_Site_Operators
+
+- G_MAN_Site_Managers
+
+### Leeds Site
+- G_LEE_Scanning_Operators
+
+- G_LEE_Scanning_Managers
+
+- G_LEE_Machining_Operators
+
+- G_LEE_Machining_Managers
+
+- G_LEE_3DPrinting_Operators
+
+- G_LEE_3DPrinting_Managers
+
+- G_LEE_Site_Operators
+
+- G_LEE_Site_Managers
+
+### Liverpool Site
+- G_LIV_Scanning_Operators
+
+- G_LIV_Scanning_Managers
+
+- G_LIV_Machining_Operators
+
+- G_LIV_Machining_Managers
+
+- G_LIV_3DPrinting_Operators
+
+- G_LIV_3DPrinting_Managers
+
+- G_LIV_Site_Operators
+
+- G_LIV_Site_Managers
+
+### Hull Site
+- G_HUL_Scanning_Operators
+
+- G_HUL_Scanning_Managers
+
+- G_HUL_Machining_Operators
+
+- G_HUL_Machining_Managers
+
+- G_HUL_3DPrinting_Operators
+
+- G_HUL_3DPrinting_Managers
+
+- G_HUL_Site_Operators
+
+- G_HUL_Site_Managers
+
+### Head Office
+- G_HO_IT_Operators
+
+- G_HO_IT_Managers
+
+- G_HO_Finance_Operators
+
+- G_HO_Finance_Managers
+
+- G_HO_Executive_CEO
+
+## Global Groups – Site Aggregate
+Aggregate groups used to group staff by site-wide role or department.
+
+### Example: Manchester
+- G_MAN_All_Users
+
+- G_MAN_All_Operators
+
+- G_MAN_All_Managers
+
+- G_MAN_All_Scanning
+
+- G_MAN_All_Machining
+
+- G_MAN_All_3DPrinting
+
+(Equivalent sets exist for LEE, LIV, HUL, and HO.)
+
+## Global Groups – Function Aggregate
+These groups unify similar roles across all sites.
+
+- G_All_Scanning_Operators
+
+- G_All_Scanning_Managers
+
+- G_All_Scanning_Users
+
+- G_All_Machining_Operators
+
+- G_All_Machining_Managers
+
+- G_All_Machining_Users
+
+- G_All_3DPrinting_Operators
+
+- G_All_3DPrinting_Managers
+
+- G_All_3DPrinting_Users
+
+- G_All_Site_Operators
+
+- G_All_Site_Managers
+
+- G_All_Site_Users
+
+- G_All_IT_Operators
+
+- G_All_IT_Managers
+
+- G_All_IT_Users
+
+- G_All_Finance_Operators
+
+- G_All_Finance_Managers
+
+- G_All_Finance_Users
+
+## Global Groups – Organisation-Wide
+Top-tier aggregates for broadest inclusion.
+
+- G_All_Sites_Users — All users across the four operational sites (excludes HO)
+
+- G_All_Operators — All operators (any site, any department)
+
+- G_All_Managers — All managers (any site, any department)
+
+- G_All_Users — All users company-wide, including HO
+
+## Group Nesting Design
+Group membership follows simple and consistent nesting logic:
+
+### Base Level
+Users are directly placed in one primary group only.\
+Example: John Smith is added to `G_MAN_Scanning_Operators`
+
+### Site Aggregates
+Base groups are members of corresponding site-level aggregates:\
+`G_MAN_Scanning_Operators` ⟶ `G_MAN_All_Users`, `G_MAN_All_Operators`, `G_MAN_All_Scanning`
+
+### Function Aggregates
+Same base group is added to function-level aggregates:\
+`G_MAN_Scanning_Operators` ⟶ `G_All_Scanning_Operators`
+
+### Organisation-Wide Groups
+Aggregates flow up into top-level groups:\
+`G_All_Scanning_Operators` ⟶ `G_All_Operators`
+`G_MAN_All_Users` ⟶ `G_All_Users`
+
+Note: Over-nesting is avoided for performance and clarity.
+
+## Computer Groups
+Mirroring user group structure for device management:
+
+- G_MAN_Scanning_Computers
+
+- G_MAN_All_Computers
+
+- G_All_Scanning_Computers
+
+- G_All_Computers
+(Pattern repeats for each site and department.)
+
+## Domain Local Groups (Resource Access)
+Resources (file shares, printers, applications) are assigned permissions via DL_ groups:\
+
+- DL_Scanning_Files_Modify
+
+- DL_Machining_Share_Read
+
+- DL_3DPrinting_Apps_Install
+
+Membership: These DL_ groups include appropriate G_ function or site groups.
+
+## Targeting Use Cases
+|Use Case|	Method|
+|--------|--------|
+|Apply GPO to all 3D printing operators|`G_All_3DPrinting_Operators`|
+|File share access for all scanning staff|Add `G_All_Scanning_Users` to `DL_Scanning_Files_Modify`
+|Software deployment to Manchester 3D printing devices|Filter GPO to `G_MAN_3DPrinting_Computers`
+|Delegate permissions to IT|Grant `G_All_IT_Managers` access via DL_ groups or OU delegation
+
+## Implementation Examples
+*Example 1*: Add New Scanning Operator (Manchester)
+
+- Create user account in OU
+
+- Add to `G_MAN_Scanning_Operators`
+
+- Inherits all access via nesting
+
+*Example 2*: Deploy Software to 3D Printing
+
+- Create GPO with deployment
+
+- Link at domain/root
+
+- Scope to `G_All_3DPrinting_Computers`
+
+*Example 3*: Access Control for File Share
+
+- Create DL_Scanning_Files_Modify
+
+- Add `G_All_Scanning_Users` to DL group
+
+- Assign modify permissions on share
+- 
+## Group Nesting Overview
+
+### Users
 
 ---
 
-> This document outlines the global security group strategy used at Riverside Manufacturing. It complements the OU structure and focuses on a clean, logical, and scalable design for permission assignment, policy filtering, and administrative delegation across departments, roles, and sites.
-
----
-
-## Purpose
-
-To create a structured group system that provides:
-
-* Simple user group assignments
-* Granular and flexible targeting
-* Minimal administrative overhead
-* Maximum scalability across new departments, roles, or sites
-
----
-
-## Why This Structure?
-
-The approach taken here aims to balance **simplicity and granularity**:
-
-* Users are only assigned to **one primary group** that clearly represents their job role, department, and site. No need to manually add users to multiple levels.
-* From that single group, **nesting** is used to allow access to broader categories (site-wide, department-wide, role-wide, etc.).
-* Admins can target policies, file permissions, software deployments, or mail groups at the most appropriate level without ambiguity.
-* It allows any new department or site to be bolted onto the system without reworking the whole hierarchy.
-
-This structure reduces clutter and human error, while supporting rich targeting scenarios like:
-
-* All Managers
-* All 3D Printing staff at Leeds
-* All users in Hull
-* All Scanning Operators across all sites
-
----
-
-## Group Inheritance Model
-
-Users are assigned to the **most specific group**:
-
-> `SITE_DEPT_ROLE`
-> e.g., `MAN_Scanning_Operator`
-
-### Inheritance Chain
-
-Each group feeds into higher-level categories:
-
+```Markdown
+G_All_Users
+│
+├── G_All_Sites_Users
+│   ├── G_MAN_All_Users
+│   │   ├── G_MAN_Scanning_Operators
+│   │   ├── G_MAN_Scanning_Managers
+│   │   ├── G_MAN_Machining_Operators
+│   │   ├── G_MAN_Machining_Managers
+│   │   ├── G_MAN_3DPrinting_Operators
+│   │   ├── G_MAN_3DPrinting_Managers
+│   │   ├── G_MAN_Site_Operators
+│   │   └── G_MAN_Site_Managers
+│   │
+│   ├── G_LEE_All_Users
+│   │   └── (Same pattern as Manchester)
+│   │
+│   ├── G_LIV_All_Users
+│   │   └── (Same pattern as Manchester)
+│   │
+│   └── G_HUL_All_Users
+│       └── (Same pattern as Manchester)
+│
+├── G_HO_All_Users
+│   ├── G_HO_IT_Operators
+│   ├── G_HO_IT_Managers
+│   ├── G_HO_Finance_Operators
+│   ├── G_HO_Finance_Managers
+│   └── G_HO_Executive_CEO
+│
+├── G_All_Operators
+│   ├── G_All_Scanning_Operators
+│   │   ├── G_MAN_Scanning_Operators
+│   │   ├── G_LEE_Scanning_Operators
+│   │   ├── G_LIV_Scanning_Operators
+│   │   └── G_HUL_Scanning_Operators
+│   │
+│   ├── G_All_Machining_Operators
+│   │   └── (Same pattern across all sites)
+│   │
+│   ├── G_All_3DPrinting_Operators
+│   │   └── (Same pattern across all sites)
+│   │
+│   ├── G_All_Site_Operators
+│   │   └── (Same pattern across all sites)
+│   │
+│   └── G_All_IT_Operators
+│       └── G_HO_IT_Operators
+│
+├── G_All_Managers
+│   └── Same as above (Managers instead of Operators)
+│
+└── G_All_Department_Users
+    ├── G_All_Scanning_Users
+    │   ├── G_All_Scanning_Operators
+    │   └── G_All_Scanning_Managers
+    ├── G_All_Machining_Users
+    │   └── ...
+    ├── G_All_3DPrinting_Users
+    │   └── ...
+    ├── G_All_Site_Users
+    │   └── ...
+    ├── G_All_IT_Users
+    │   └── ...
+    └── G_All_Finance_Users
+        └── ...
 ```
-MAN_Scanning_Operator
-├──> MAN_Scanning
-│    └──> MAN
-│         └──> All_Users
-└──> All_Scanning_Operator
-     └──> All_Operator
+
+### Computers
+
+---
+```Markdown
+G_All_Computers
+│
+├── G_All_Site_Computers
+│   ├── G_MAN_All_Computers
+│   │   ├── G_MAN_Scanning_Computers
+│   │   ├── G_MAN_Machining_Computers
+│   │   ├── G_MAN_3DPrinting_Computers
+│   │   └── G_MAN_Site_Computers
+│   │
+│   ├── G_LEE_All_Computers
+│   │   ├── G_LEE_Scanning_Computers
+│   │   ├── G_LEE_Machining_Computers
+│   │   ├── G_LEE_3DPrinting_Computers
+│   │   └── G_LEE_Site_Computers
+│   │
+│   ├── G_LIV_All_Computers
+│   │   ├── G_LIV_Scanning_Computers
+│   │   ├── G_LIV_Machining_Computers
+│   │   ├── G_LIV_3DPrinting_Computers
+│   │   └── G_LIV_Site_Computers
+│   │
+│   └── G_HUL_All_Computers
+│       ├── G_HUL_Scanning_Computers
+│       ├── G_HUL_Machining_Computers
+│       ├── G_HUL_3DPrinting_Computers
+│       └── G_HUL_Site_Computers
+│
+└── G_HO_All_Computers
+    ├── G_HO_IT_Computers
+    ├── G_HO_Finance_Computers
+    └── G_HO_Executive_Computers
 ```
+## Final Summary
 
-This allows access to any of the following:
+This document outlines a complete, scalable, and well-nested Active Directory global group structure designed for a fictional company, "Riverside", operating across five locations (Manchester, Leeds, Liverpool, Hull, and Head Office). The group design follows Microsoft's **AGDLP** best practices, ensuring that users are only ever members of base-level global groups and permissions are granted via nested domain local groups. This setup offers a clean, auditable, and highly flexible system for assigning access and deploying policies by **site**, **department**, and **role**.
 
-* All users at Manchester
-* All Scanning users at Manchester
-* All Scanning Operators across all sites
-* All Operators across the company
+We’ve used a consistent naming convention (`G_` for global groups and `DL_` for domain locals), and structured the groups into **base**, **site aggregates**, **function aggregates**, and **organisation-wide** layers.
 
----
+In total, this structure consists of:
 
-## Naming Convention
+- **37 base-level global groups** (where user accounts are assigned)
+- **27 site aggregate groups** (e.g. all users, operators, managers per site)
+- **18 function-level aggregates** (e.g. all scanning operators across all sites)
+- **4 org-wide user aggregates** (all users, all operators, etc.)
+- **17 global computer groups**, including:
+  - 12 by site & department (e.g. `G_MAN_Scanning_Computers`)
+  - 4 site-wide (e.g. `G_LIV_All_Computers`)
+  - 1 full-org group: `G_All_Computers`
 
-Group names follow a clear and consistent pattern:
+> 🔢 **Total group count: 103 global groups**
 
-### Components
+This structure allows for:
 
-* **Sites:** `MAN`, `LEE`, `LIV`, `HUL`, `HO`
-* **Departments:** `3DPrinting`, `Machining`, `Scanning`, `Office`, `IT`, `Finance`, `Executive`
-* **Roles:** `Operator`, `Manager`, `CEO`
+- **Clear targeting of GPOs**, login scripts, software deployments, etc.
+- **Straightforward user onboarding** (one group membership per user)
+- **Simplified auditing** (permissions can be traced through logical nesting)
+- **Scalability** — easy to expand with new sites, departments, or roles
+- **Efficient permissioning** via reusable DL_ groups
 
-### Group Levels
-
-| Level | Example                 | Description                         |
-| ----- | ----------------------- | ----------------------------------- |
-| 1     | `MAN_Scanning_Operator` | Users are assigned here             |
-| 2     | `MAN_Scanning`          | All users in Scanning at Manchester |
-| 3     | `MAN`                   | All users at Manchester             |
-| 4     | `All_Users`             | All users company-wide              |
-| 5     | `All_Scanning_Operator` | All Scanning Operators across sites |
-| 6     | `All_Operator`          | All Operators company-wide          |
-
-Special roles (HO only):
-
-* `HO_IT_Manager`, `HO_Executive_CEO`, etc.
+By keeping group memberships clean, avoiding unnecessary nesting, and maintaining consistent naming, this approach lays a solid foundation for managing a growing Active Directory environment in an enterprise-grade homelab or production network.
 
 ---
 
-## Diagram
-
-```
-User: John Smith (Leeds, Machining, Manager)
-
-Assigned to:
-  LEE_Machining_Manager
-
-Which inherits:
-├──> LEE_Machining
-│    └──> LEE
-│         └──> All_Users
-└──> All_Machining_Manager
-     └──> All_Manager
-```
-
----
-
-## Use Cases
-
-| Target                                 | Group to Use                      |
-| -------------------------------------- | --------------------------------- |
-| All Scanning Managers across all sites | `All_Scanning_Manager`            |
-| All users in Hull                      | `HUL`                             |
-| All Managers company-wide              | `All_Manager`                     |
-| All 3D Printing users at Leeds         | `LEE_3DPrinting`                  |
-| All IT staff at HO                     | `HO_IT_Manager`, `HO_IT_Operator` |
-
----
-
-## Administration Notes
-
-* **User assignment** is always at the most specific level (Site + Dept + Role).
-* **Nesting** handles everything else.
-* Scripts will validate nesting and enforce consistency.
-* All groups are **Global Security Groups**.
-* Domain Local Groups (e.g., for FileServer permissions) will reference these global groups and are defined separately.
-
----
-
-## Next Steps
-
-| Task                                   | Status |
-| -------------------------------------- | ------ |
-| Create group nesting script            | \[ ]   |
-| Document domain-level groups           | \[ ]   |
-| Create import CSV for group creation   | \[ ]   |
-| Populate security groups for each user | \[ ]   |
-
----
-
-## Notes
-
-* Consistency is critical — follow the naming pattern exactly.
-* Group-based targeting is used instead of relying on AD attributes.
-* This structure can be used with PowerShell, GPO, folder permissions, and even cloud sync mappings.
-
----
-
-> This group strategy is designed to be bulletproof at scale. If a new site or department is added, just follow the same rules — no rewrites, no redesigns.
+[⬅️ Back to OU Structure](../02-active-directory/ou-structure.md) | [Next: Domain Local Groups ➡️](../02-active-directory/domain-local-groups.md)

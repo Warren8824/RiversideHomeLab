@@ -6,6 +6,17 @@ The purpose of this lab is to deepen my understanding of Windows Server administ
 
 Everything here has been built from scratch on personal hardware, and is meant to serve as both a learning aid and a reference I can expand on over time.
 
+## 📊 Lab Progress Overview
+
+| Section                     | Status          | Details                                |
+|-----------------------------|-----------------|----------------------------------------|
+| Infrastructure Setup        | ✅ Complete     | Hyper-V, NAT, DC VM                    |
+| Active Directory Structure  | 🟡 In Progress  | OU design done, security groups next    |
+| Group Policies              | ⏳ Planned      | Inventory and baseline policies         |
+| File Server                 | ⏳ Planned      | Folder structure and permissions        |
+| Helpdesk Scenarios          | ⏳ Planned      | Realistic troubleshooting tasks         |
+| Mini-Projects               | ⏳ Planned      | Automation, security, monitoring        |
+
 ![DC01](01-infrastucture/images/DC01.png)
 
 ---
@@ -35,7 +46,7 @@ This setup includes:
 ```plaintext
 riverside-lab/
 ├── README.md                                       # This file
-├── 01-infrastucture/                                  # Hyper-V setup documentation
+├── 01-infrastucture/                               # Hyper-V setup documentation
 │   ├── build-scripts/                              # PowerShell scripts used in building the system
 |   |   ├── 01ImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1  
 |   |   ├── 02CreateDCVM_Host.ps1
@@ -52,27 +63,27 @@ riverside-lab/
 │   ├── ip-addressing-scheme.md                     # IP/subnet breakdown
 |   ├── Riverside Physical Topology.drawio.png      # Physical Diagram of what I intend the Lab to simulate
 │   └── Riverside Virtual Topology.drawio.png       # Visual Description of the Hyper V Setup used
-├── 02-active-directory/                               # AD setup and scripts
+├── 02-active-directory/                            # AD setup and scripts
 │   ├── build-scripts/
 |   │   ├── 01CreateOUStructure_DC01.ps1
 │   ├── images/
 │   ├── ou-structure.md                             # Full description of OU design
 │   ├── security-groups.md                          # TO DO
 │   └── sample-users.md                             # LLM generated user list
-├── 03-group-policy/                                   # GPO setup and screenshots
+├── 03-group-policy/                                # GPO setup and screenshots
 │   ├── images/                            
 │   ├── gpo-inventory.md                            # TO DO
 │   └── security-baseline.md                        # TO DO
-├── 04-file-server/                                    # Shared folder setup
+├── 04-file-server/                                 # Shared folder setup
 │   ├── images/
 │   ├── folder-structure.md                         # TO DO
 │   └── permissions-matrix.md                       # TO DO
-├── 05-helpdesk-scenarios/                             # Realistic learning scenarios
+├── 05-helpdesk-scenarios/                          # Realistic learning scenarios
 │   ├── password-reset.md                           # TO DO
 │   ├── account-unlock.md                           # TO DO
 │   ├── modified-access.md                          # TO DO
 │   └── group-management.md                         # TO DO
-└── 06-projects/                                       # Mini-projects
+└── 06-projects/                                    # Mini-projects
     ├── automated-onboarding/                       # TO DO
     ├── security-audit/                             # TO DO
     └── monitoring-setup/                           # TO DO
