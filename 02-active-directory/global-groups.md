@@ -134,6 +134,7 @@ A PowerShell script has been developed to:
 3. Handle both **user** and **computer** group structures in a single execution
 
 *(Refer to [`02CreateandNestGroups.ps1`](build-scripts/02CreateandNestGroups.ps1) in this repository for implementation details.)*
+
 ![Groups Creation Script](images/CreateGroups.png)
 
 ---
