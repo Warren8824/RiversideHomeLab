@@ -1,7 +1,7 @@
 # Active Directory Global Group Structure & Nesting Plan
 
-**Client:** Riverside Manufacturing – Fictional
-**Prepared by:** Warren Bebbington
+**Client:** Riverside Manufacturing – Fictional\
+**Prepared by:** Warren Bebbington\
 **Date:** 14/06/2025
 
 ---
