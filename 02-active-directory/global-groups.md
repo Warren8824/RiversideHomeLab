@@ -103,7 +103,7 @@ Dept Roll-Up   Site Roll-Up (G_SITE)
 
 ## Domain Local Groups (Resource Access)
 
-Resource permissions are assigned to DL\_ groups, which include matching global groups:
+Resource permissions are assigned to DL_ groups, which include matching global groups:
 
 | DL Group                   | Members                       |
 | -------------------------- | ----------------------------- |
