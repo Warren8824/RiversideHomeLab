@@ -99,7 +99,8 @@ OU=Users,OU=3DPrinting,OU=Manchester,OU=Sites,DC=riverside,DC=local
    * Add the user to the **most specific group** (last group in Group Memberships list).
 5. Log success or errors at each step.
 
-The script can be found [here](03CreateSampleUsers.ps1)
+The script can be found [here](build-scripts/03CreateSampleUsers_DC01.ps1)
+
 ---
 
 ## Sample User Data Extract
