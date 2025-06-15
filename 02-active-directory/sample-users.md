@@ -25,7 +25,7 @@ The CSV file contains the following columns:
 | First Name        | User's given name                                   |
 | Last Name         | User's surname                                      |
 | Username          | User's login name (SAMAccountName)                  |
-| Job Role          | User's job title (e.g. Manager, Operator)           |
+| Job Role          | User's job title (e.g. Scanning Manager, IT Operator)           |
 | Site              | Physical or logical site/location (e.g. Manchester) |
 | Department        | Department name (e.g. 3DPrinting, Office)           |
 | OU Location       | Distinguished Name (DN) of the target OU in AD      |
