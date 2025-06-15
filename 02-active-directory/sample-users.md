@@ -101,6 +101,8 @@ OU=Users,OU=3DPrinting,OU=Manchester,OU=Sites,DC=riverside,DC=local
 
 The script can be found [here](build-scripts/03CreateSampleUsers_DC01.ps1)
 
+![Create Users Script](images/CreateUsers.png)
+
 ---
 
 ## Sample User Data Extract
