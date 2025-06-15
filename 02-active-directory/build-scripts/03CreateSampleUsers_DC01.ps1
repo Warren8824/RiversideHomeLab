@@ -1,66 +1,70 @@
-# Import ActiveDirectory module for AD cmdlets
+# Path to your CSV file with user data
+$csvPath = "sample_AD_users.csv"
+
+# Import the Active Directory module if not loaded
 Import-Module ActiveDirectory
 
-# Prompt for the default password (as SecureString, hidden input)
-$defaultPassword = Read-Host -AsSecureString "Enter default password for new accounts"
-
-# Path to the input CSV file
-$csvPath = "sample_AD_users.csv"
-if (!(Test-Path $csvPath)) {
-    Write-Error "CSV file not found at $csvPath"
-    exit
-}
-
-# Import the CSV; expected headers:
-# Full Name, Username, Job Role, Site, Department, OU Location, Group Memberships
+# Import user data from CSV
 $users = Import-Csv -Path $csvPath
 
+# Promt for default password to create all users with
+$defaultPassword = Read-Host -AsSecureString "Enter password for all users temporary password"
+
 foreach ($user in $users) {
+    # Prepare variables
+    $firstName = $user.'First Name'
+    $lastName = $user.'Last Name'
     $username = $user.Username
-
-    # Skip if user already exists
-    if (Get-ADUser -Filter "SamAccountName -eq '$username'" -ErrorAction SilentlyContinue) {
-        Write-Host "User '$username' exists – skipping." -ForegroundColor Yellow
-        continue
-    }
-
-    # Split full name into first and last (assumes exactly two parts)
-    $nameParts = $user.'Full Name'.Trim() -split '\s+', 2
-    $givenName = $nameParts[0]
-    $surname   = if ($nameParts.Count -gt 1) { $nameParts[1] } else { "" }
+    $ouLocation = $user.'OU Location'
 
     # Prepare other attributes
     $department = $user.Department
     $jobRole    = $user.'Job Role'
     $site       = $user.Site
-    $ouPath     = $user.'OU Location'
     # Title = Department + space + JobRole
     $title      = "$department $jobRole"
 
-    # Create the AD user
-    New-ADUser `
-        -Name           "$givenName $surname" `
-        -SamAccountName $username `
-        -GivenName      $givenName `
-        -Surname        $surname `
-        -Path           $ouPath `
-        -Title          $title `
-        -Department     $department `
-        -Office         $site `
-        -AccountPassword $defaultPassword `
-        -Enabled        $true `
-        -ChangePasswordAtLogon $true `
-        -AccountExpirationDate (Get-Date).AddDays(14)
+    # Extract the last group from the Group Memberships (semicolon separated)
+    $groups = $user.'Group Memberships' -split ';' | ForEach-Object { $_.Trim() }
+    $specificGroup = $groups[-1]  # last group in the list
 
-    Write-Host "Created '$username' with title '$title' in OU '$ouPath'." -ForegroundColor Green
+    # Check if user already exists to avoid duplication
+    $existingUser = Get-ADUser -Filter { SamAccountName -eq $username } -ErrorAction SilentlyContinue
 
-    # Add to the most-specific group (last in semicolon list)
-    if ($user.'Group Memberships') {
-        $groups    = $user.'Group Memberships' -split ';'
-        $lastGroup = $groups[-1].Trim()
-        if ($lastGroup) {
-            Add-ADGroupMember -Identity $lastGroup -Members $username
-            Write-Host " -> Added to group '$lastGroup'." -ForegroundColor Green
+    if ($existingUser) {
+        Write-Host "User $username already exists. Skipping creation."
+    } else {
+        # Create new user with minimal required attributes
+        try {
+            New-ADUser `
+                -GivenName $firstName `
+                -Surname $lastName `
+                -Name "$firstName $lastName" `
+                -SamAccountName $username `
+                -UserPrincipalName "$username@riverside.local" `
+                -Path $ouLocation `
+                -Title $title `
+                -Department $department `
+                -Office $site `
+                -AccountPassword $defaultPassword `
+                -Enabled $true `
+                -ChangePasswordAtLogon $true `
+                -AccountExpirationDate (Get-Date).AddDays(14)
+
+            Write-Host "Created user $username in $ouLocation"
         }
+        catch {
+            Write-Warning "Failed to create user $username. Error: $_"
+            continue
+        }
+    }
+
+    # Add user to the most specific group only
+    try {
+        Add-ADGroupMember -Identity $specificGroup -Members $username -ErrorAction Stop
+        Write-Host "Added $username to group $specificGroup"
+    }
+    catch {
+        Write-Warning "Failed to add $username to group $specificGroup. Error: $_"
     }
 }
