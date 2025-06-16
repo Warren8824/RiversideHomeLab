@@ -101,8 +101,8 @@ OU=Users,OU=3DPrinting,OU=Manchester,OU=Sites,DC=riverside,DC=local
 
 The script can be found [here](build-scripts/03CreateSampleUsers_DC01.ps1)
 
-![Create Users Script](images/CreateUsers.png)
-
+![Create Users Script](images/CreateUsers.png)\
+*Create user script*
 ---
 
 ## Sample User Data Extract
@@ -112,6 +112,10 @@ The script can be found [here](build-scripts/03CreateSampleUsers_DC01.ps1)
 | Marcus     | Thompson  | marcus.thompson | Manager  | Manchester | 3DPrinting | OU=Users,OU=3DPrinting,OU=Manchester,OU=Sites,DC=riverside,DC=local | G\_All\_Users; G\_All\_3DPrinting\_Users; G\_MAN; G\_MAN\_3DPrinting\_Manager  |
 | Priya      | Sharma    | priya.sharma    | Operator | Manchester | 3DPrinting | OU=Users,OU=3DPrinting,OU=Manchester,OU=Sites,DC=riverside,DC=local | G\_All\_Users; G\_All\_3DPrinting\_Users; G\_MAN; G\_MAN\_3DPrinting\_Operator |
 | Rebecca    | Chen      | rebecca.chen    | Manager  | Manchester | Machining  | OU=Users,OU=Machining,OU=Manchester,OU=Sites,DC=riverside,DC=local  | G\_All\_Users; G\_All\_Machining\_Users; G\_MAN; G\_MAN\_Machining\_Manager    |
+
+---
+![Domain Users](images/ADUsers.png)\
+*Domain users after running script*
 
 ---
 
