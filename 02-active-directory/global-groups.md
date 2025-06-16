@@ -149,3 +149,5 @@ Future expansions may include:
 * Automated audit reports of group membership
 
 This structure provides a robust, scalable foundation for RBAC and GPO targeting across the organisation.
+
+[⬅️ Back to OU Structure](.md) | [Next: Sample User Creation ➡️](../02-active-directory/sample-users.md)
