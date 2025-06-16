@@ -103,6 +103,7 @@ The script can be found [here](build-scripts/03CreateSampleUsers_DC01.ps1)
 
 ![Create Users Script](images/CreateUsers.png)\
 *Create user script*
+
 ---
 
 ## Sample User Data Extract
