@@ -129,3 +129,4 @@ The script can be found [here](build-scripts/03CreateSampleUsers_DC01.ps1)
 * **Error Handling**: Script logs warnings on creation or group assignment failures for troubleshooting.
 
 
+[⬅️ Back to Global Groups](global-groups.md) | [Next: Group Policy ➡️](../02-active-directory/.md)
