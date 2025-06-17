@@ -11,7 +11,7 @@ Everything here has been built from scratch on personal hardware, and is meant t
 | Section                     | Status          | Details                                |
 |-----------------------------|-----------------|----------------------------------------|
 | Infrastructure Setup        | ✅ Complete     | Hyper-V, NAT, DC VM                    |
-| Active Directory Structure  | 🟡 In Progress  | OU design done, security groups next    |
+| Active Directory Structure  | ✅ Complete  | OU design, security groups, sample users    |
 | Group Policies              | ⏳ Planned      | Inventory and baseline policies         |
 | File Server                 | ⏳ Planned      | Folder structure and permissions        |
 | Helpdesk Scenarios          | ⏳ Planned      | Realistic troubleshooting tasks         |
