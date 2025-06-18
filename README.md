@@ -66,6 +66,8 @@ riverside-lab/
 ├── 02-active-directory/                            # AD setup and scripts
 │   ├── build-scripts/
 |   │   ├── 01CreateOUStructure_DC01.ps1
+|   │   ├── 02CreateandNestGroups_DC01.ps1
+|   |   └── 03CreateSampleUsers_DC01.ps1   
 │   ├── images/
 │   ├── ou-structure.md                             # Full description of OU design
 │   ├── global-groups.md                            # Full Global Group Design
