@@ -68,7 +68,7 @@ riverside-lab/
 |   │   ├── 01CreateOUStructure_DC01.ps1
 │   ├── images/
 │   ├── ou-structure.md                             # Full description of OU design
-│   ├── security-groups.md                          # TO DO
+│   ├── global-groups.md                            # Full Global Group Design
 │   └── sample-users.md                             # LLM generated user list
 ├── 03-group-policy/                                # GPO setup and screenshots
 │   ├── images/                            
