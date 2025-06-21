@@ -69,7 +69,7 @@ foreach ($object in $objects) {
     }
 }
 
-Write-Host "Creating Head Office departments..." -ForegroundColor Cyan
+Write-Host "Creating Head Office OUs..." -ForegroundColor Cyan
 
 # Create Head Office departments
 foreach ($object in $objects) {
