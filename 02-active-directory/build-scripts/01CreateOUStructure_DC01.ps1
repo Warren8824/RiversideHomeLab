@@ -19,41 +19,44 @@ function New-CheckedOU {
 }
 
 # Sites and Departments
-$sites = @("Manchester", "Liverpool", "Sheffield", "Leeds")
+$sites = @("Manchester", "Liverpool", "Hull", "Leeds")
+$objects = @("Users", "Computers")
 $departments = @("Scanning", "Machining", "3DPrinting", "Office")
 
+# Create Head Office departments
+$hoDepts = @("IT", "Finance", "Executive")
+
 # Create root level OUs
-New-CheckedOU -Name "Sites" -ParentDN $domain
-New-CheckedOU -Name "HeadOffice" -ParentDN $domain
+New-CheckedOU -Name "All$objects[0]" -ParentDN $domain
+New-CheckedOU -Name "All$objects[1]" -ParentDN $domain
+New-CheckedOU -Name "Sites" -ParentDN "OU=All$objects[0],$domain"
+New-CheckedOU -Name "Sites" -ParentDN "OU=All$objects[1],$domain"
+New-CheckedOU -Name "HeadOffice" -ParentDN "OU=All$objects[0],$domain"
+New-CheckedOU -Name "HeadOffice" -ParentDN "OU=All$objects[1],$domain"
 New-CheckedOU -Name "Groups" -ParentDN $domain
 New-CheckedOU -Name "ServiceAccounts" -ParentDN $domain
 New-CheckedOU -Name "Admin" -ParentDN $domain
 
 # Create OUs under Sites
-foreach ($site in $sites) {
-    $siteDN = "OU=Sites,$domain"
-    New-CheckedOU -Name $site -ParentDN $siteDN
+foreach ($object in $objects)
+{
+    foreach ($site in $sites)
+    {
+        $siteDN = "OU=Sites,OU=All$object,$domain"
+        New-CheckedOU -Name $site -ParentDN $siteDN
 
-    foreach ($dept in $departments) {
-        $deptDN = "OU=$site,OU=Sites,$domain"
+        foreach ($dept in $departments)
+        {
+            $deptDN = "OU=$site,OU=Sites,OU=All$object,$domain"
+            New-CheckedOU -Name $dept -ParentDN $deptDN
+
+        }
+    }
+    # Create HO OUs
+    $deptDN = "OU=HeadOffice,OU=All$object,$domain"
+    foreach ($dept in $hoDepts)
+    {
         New-CheckedOU -Name $dept -ParentDN $deptDN
-
-        # Users and Computers sub-OUs
-        $deptBase = "OU=$dept,OU=$site,OU=Sites,$domain"
-        New-CheckedOU -Name "Users" -ParentDN $deptBase
-        New-CheckedOU -Name "Computers" -ParentDN $deptBase
     }
 }
-
-# Create Head Office departments
-$hoDepts = @("IT", "Finance", "Executive")
-$deptDN = "OU=HeadOffice,$domain"
-foreach ($dept in $hoDepts) {
-    New-CheckedOU -Name $dept -ParentDN $deptDN
-
-    $base = "OU=$dept,OU=HeadOffice,$domain"
-    New-CheckedOU -Name "Users" -ParentDN $base
-    New-CheckedOU -Name "Computers" -ParentDN $base
-}
-
 Write-Host "OU structure build completed successfully!" -ForegroundColor Green
