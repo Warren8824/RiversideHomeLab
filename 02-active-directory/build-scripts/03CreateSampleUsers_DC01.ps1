@@ -1,5 +1,5 @@
 # Path to your CSV file with user data
-$csvPath = "sample_AD_users.csv"
+$csvPath = "path\to\file\sample_AD_users.csv"
 
 # Import the Active Directory module if not loaded
 Import-Module ActiveDirectory
@@ -44,6 +44,7 @@ foreach ($user in $users) {
                 -UserPrincipalName "$username@riverside.local" `
                 -Path $ouLocation `
                 -Title $title `
+                -Description $title `
                 -Department $department `
                 -Office $site `
                 -AccountPassword $defaultPassword `
