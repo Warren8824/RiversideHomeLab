@@ -6,7 +6,7 @@
 
 ---
 
-> **Edit**: Renamed Management OU to Office to match group naming convention. All scripts updated.
+> **Edit**: Renamed Management OU to Office to match group naming convention. Added AllUsers and AllComputers OU top-level containers. All scripts updated.
 
 ## Overview
 
@@ -14,11 +14,10 @@ Riverside Manufacturing is a multi-site engineering and production firm providin
 
 This document outlines a full AD structure that:
 
-- Mirrors organizational layout (locations, departments, roles)
+- Mirrors organizational layout (object(User/PC), locations, departments)
 - Supports targeting and filtering for users and devices
 - Enables efficient administrative delegation
 - Allows dynamic attribute-based filtering (e.g., by job title or department)
-- Excessive OU depth for this setup to represent real world applications
 
 ---
 
@@ -36,6 +35,7 @@ This document outlines a full AD structure that:
 - Scanning
 - Machining
 - 3D Printing
+- Office
 
 ### **Management Roles:**
 
@@ -55,74 +55,61 @@ This document outlines a full AD structure that:
 
 ```
 DC=riverside,DC=local
-|
-|-- OU=Sites
-|    |-- OU=Manchester
-|    |    |-- OU=Scanning
-|    |    |    |-- OU=Users
-|    |    |    |-- OU=Computers
-|    |    |-- OU=Machining
-|    |    |    |-- OU=Users
-|    |    |    |-- OU=Computers
-|    |    |-- OU=3DPrinting
-|    |    |    |-- OU=Users
-|    |    |    |-- OU=Computers
-|    |    |-- OU=Office
-|    |         |-- OU=Users
-|    |         |-- OU=Computers
-|    |-- OU=Leeds
-|    |    |-- OU=Scanning
-|    |    |    |-- OU=Users
-|    |    |    |-- OU=Computers
-|    |    |-- OU=Machining
-|    |    |    |-- OU=Users
-|    |    |    |-- OU=Computers
-|    |    |-- OU=3DPrinting
-|    |    |    |-- OU=Users
-|    |    |    |-- OU=Computers
-|    |    |-- OU=Office
-|    |         |-- OU=Users
-|    |         |-- OU=Computers
-|    |-- OU=Liverpool
-|    |    |-- OU=Scanning
-|    |    |    |-- OU=Users
-|    |    |    |-- OU=Computers
-|    |    |-- OU=Machining
-|    |    |    |-- OU=Users
-|    |    |    |-- OU=Computers
-|    |    |-- OU=3DPrinting
-|    |    |    |-- OU=Users
-|    |    |    |-- OU=Computers
-|    |    |-- OU=Office
-|    |         |-- OU=Users
-|    |         |-- OU=Computers
-|    |-- OU=Hull
-|    |    |-- OU=Scanning
-|    |    |    |-- OU=Users
-|    |    |    |-- OU=Computers
-|    |    |-- OU=Machining
-|    |    |    |-- OU=Users
-|    |    |    |-- OU=Computers
-|    |    |-- OU=3DPrinting
-|    |    |    |-- OU=Users
-|    |    |    |-- OU=Computers
-|    |    |-- OU=Office
-|    |         |-- OU=Users
-|    |         |-- OU=Computers
-|-- OU=HeadOffice
-|    |-- OU=IT
-|    |    |-- OU=Users
-|    |    |-- OU=Computers
-|    |-- OU=Finance
-|    |    |-- OU=Users
-|    |    |-- OU=Computers
-|    |-- OU=Executive
-|         |-- OU=Users
-|         |-- OU=Computers
-|
-|-- OU=Groups
-|-- OU=ServiceAccounts
-|-- OU=Admin
+├── OU=AllUsers
+│   ├── OU=Sites
+│   │   ├── OU=Manchester
+│   │   │   ├── OU=Scanning
+│   │   │   ├── OU=Machining
+│   │   │   ├── OU=3DPrinting
+│   │   │   └── OU=Office
+│   │   ├── OU=Liverpool
+│   │   │   ├── OU=Scanning
+│   │   │   ├── OU=Machining
+│   │   │   ├── OU=3DPrinting
+│   │   │   └── OU=Office
+│   │   ├── OU=Hull
+│   │   │   ├── OU=Scanning
+│   │   │   ├── OU=Machining
+│   │   │   ├── OU=3DPrinting
+│   │   │   └── OU=Office
+│   │   └── OU=Leeds
+│   │       ├── OU=Scanning
+│   │       ├── OU=Machining
+│   │       ├── OU=3DPrinting
+│   │       └── OU=Office
+│   └── OU=HeadOffice
+│       ├── OU=IT
+│       ├── OU=Finance
+│       └── OU=Executive
+├── OU=AllComputers
+│   ├── OU=Sites
+│   │   ├── OU=Manchester
+│   │   │   ├── OU=Scanning
+│   │   │   ├── OU=Machining
+│   │   │   ├── OU=3DPrinting
+│   │   │   └── OU=Office
+│   │   ├── OU=Liverpool
+│   │   │   ├── OU=Scanning
+│   │   │   ├── OU=Machining
+│   │   │   ├── OU=3DPrinting
+│   │   │   └── OU=Office
+│   │   ├── OU=Hull
+│   │   │   ├── OU=Scanning
+│   │   │   ├── OU=Machining
+│   │   │   ├── OU=3DPrinting
+│   │   │   └── OU=Office
+│   │   └── OU=Leeds
+│   │       ├── OU=Scanning
+│   │       ├── OU=Machining
+│   │       ├── OU=3DPrinting
+│   │       └── OU=Office
+│   └── OU=HeadOffice
+│       ├── OU=IT
+│       ├── OU=Finance
+│       └── OU=Executive
+├── OU=Groups
+├── OU=ServiceAccounts
+└── OU=Admin
 ```
 
 ---
@@ -143,7 +130,7 @@ DC=riverside,DC=local
 | Use Case                                      | Method                                                 |
 |-----------------------------------------------|--------------------------------------------------------|
 | Apply policy to all Machining Operators       | OU-based targeting or Title="Machining Operator"       |
-| Apply software to all users at Sheffield      | Use `Office=Sheffield` or OU=Sheffield                 |
+| Apply software to all users at Hull           | Use `Office=Hull` or OU=Hull                           |
 | Notify all Site Managers                      | Group membership Site Managers or `Title=Site Manager` |
 | Filter all 3D Printing users across all sites | Department="3D Printing" or OU filter                  |
 
