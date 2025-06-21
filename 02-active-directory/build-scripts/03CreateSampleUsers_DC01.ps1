@@ -34,7 +34,7 @@ foreach ($user in $users) {
     if ($existingUser) {
         Write-Host "User $username already exists. Skipping creation."
     } else {
-        # Create new user with minimal required attributes
+        # Create new user with required attributes
         try {
             New-ADUser `
                 -GivenName $firstName `

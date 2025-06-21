@@ -34,7 +34,7 @@ The CSV file contains the following columns:
 ### Example row:
 
 ```csv
-Marcus,Thompson,marcus.thompson,Manager,Manchester,3DPrinting,"OU=Users,OU=3DPrinting,OU=Manchester,OU=Sites,DC=riverside,DC=local","G_All_Users; G_All_3DPrinting_Users; G_MAN; G_MAN_3DPrinting_Manager"
+Marcus,Thompson,marcus.thompson,Manager,Manchester,3DPrinting,"OU=3DPrinting,OU=Manchester,OU=Sites,OU=AllUsers,DC=riverside,DC=local","G_All_Users; G_All_3DPrinting_Users; G_MAN; G_MAN_3DPrinting_Manager"
 ```
 
 ---
@@ -44,17 +44,18 @@ Marcus,Thompson,marcus.thompson,Manager,Manchester,3DPrinting,"OU=Users,OU=3DPri
 Users are created inside specific OUs that follow a hierarchical pattern reflecting their location and department:
 
 ```
-OU=Users
- └── OU=<Department> (e.g. 3DPrinting, Office, Machining)
-      └── OU=<Site> (e.g. Manchester)
-           └── OU=Sites
-                └── DC=riverside,DC=local
+
+OU=<Department> (e.g. 3DPrinting, Office, Machining)
+  └── OU=<Site> (e.g. Manchester)
+       └── OU=Sites
+            └── OU=AllUsers
+                 └── DC=riverside,DC=local
 ```
 
 **Example OU path:**
 
 ```
-OU=Users,OU=3DPrinting,OU=Manchester,OU=Sites,DC=riverside,DC=local
+OU=3DPrinting,OU=Manchester,OU=Sites,OU=AllUsers,DC=riverside,DC=local
 ```
 
 ---
@@ -64,6 +65,7 @@ OU=Users,OU=3DPrinting,OU=Manchester,OU=Sites,DC=riverside,DC=local
 * **Name:** Combination of first and last name (e.g. "Marcus Thompson")
 * **Username (SAMAccountName):** `firstname.lastname` (all lowercase)
 * **UserPrincipalName:** `username@riverside.local`
+* **Description:** Combination of Department and Job Role (e.g. "3DPrinting Manager")
 * **Title:** Combination of Department and Job Role (e.g. "3DPrinting Manager")
 * **Department:** Department from CSV (e.g. "3DPrinting")
 * **Office:** Site from CSV (e.g. "Manchester")
@@ -80,7 +82,7 @@ OU=Users,OU=3DPrinting,OU=Manchester,OU=Sites,DC=riverside,DC=local
 
 * The CSV contains a **semicolon-separated list** of group memberships.
 * Only the **most specific group** (the last group in the list) is assigned to the user directly.
-* Other groups are assumed to be **nested** (e.g. `G_MAN_3DPrinting_Manager` is nested under `G_MAN` and `G_All_3DPrinting_Users`).
+* Other groups are **nested** (e.g. `G_MAN_3DPrinting_Manager` is nested under `G_MAN` and `G_All_3DPrinting_Users`).
 * This minimizes direct group memberships and leverages AD group nesting for efficient permission management.
 
 ---
@@ -108,11 +110,11 @@ The script can be found [here](build-scripts/03CreateSampleUsers_DC01.ps1)
 
 ## Sample User Data Extract
 
-| First Name | Last Name | Username        | Job Role | Site       | Department | OU Location                                                         | Group Memberships                                                              |
-| ---------- | --------- | --------------- | -------- | ---------- | ---------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| Marcus     | Thompson  | marcus.thompson | Manager  | Manchester | 3DPrinting | OU=Users,OU=3DPrinting,OU=Manchester,OU=Sites,DC=riverside,DC=local | G\_All\_Users; G\_All\_3DPrinting\_Users; G\_MAN; G\_MAN\_3DPrinting\_Manager  |
-| Priya      | Sharma    | priya.sharma    | Operator | Manchester | 3DPrinting | OU=Users,OU=3DPrinting,OU=Manchester,OU=Sites,DC=riverside,DC=local | G\_All\_Users; G\_All\_3DPrinting\_Users; G\_MAN; G\_MAN\_3DPrinting\_Operator |
-| Rebecca    | Chen      | rebecca.chen    | Manager  | Manchester | Machining  | OU=Users,OU=Machining,OU=Manchester,OU=Sites,DC=riverside,DC=local  | G\_All\_Users; G\_All\_Machining\_Users; G\_MAN; G\_MAN\_Machining\_Manager    |
+| First Name | Last Name | Username        | Job Role | Site       | Department | OU Location                                                                    | Group Memberships                                                              |
+| ---------- | --------- | --------------- | -------- | ---------- | ---------- |--------------------------------------------------------------------------------| ------------------------------------------------------------------------------ |
+| Marcus     | Thompson  | marcus.thompson | Manager  | Manchester | 3DPrinting | OU=3DPrinting,OU=Manchester,OU=Sites,OU=AllUsers,DC=riverside,DC=local         | G\_All\_Users; G\_All\_3DPrinting\_Users; G\_MAN; G\_MAN\_3DPrinting\_Manager  |
+| Priya      | Sharma    | priya.sharma    | Operator | Manchester | 3DPrinting | OU=3DPrinting,OU=Manchester,OU=Sites,OU=AllUsers,DC=riverside,DC=local         | G\_All\_Users; G\_All\_3DPrinting\_Users; G\_MAN; G\_MAN\_3DPrinting\_Operator |
+| Rebecca    | Chen      | rebecca.chen    | Manager  | Manchester | Machining  | OU=Machining,OU=Manchester,OU=Sites,OU=AllUsers,DC=riverside,DC=local | G\_All\_Users; G\_All\_Machining\_Users; G\_MAN; G\_MAN\_Machining\_Manager    |
 
 ---
 ![Domain Users](images/ADUsers.png)\
