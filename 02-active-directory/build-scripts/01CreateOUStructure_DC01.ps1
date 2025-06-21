@@ -11,10 +11,16 @@ function New-CheckedOU {
     $ouDN = "OU=$Name,$ParentDN"
 
     if (-not (Get-ADOrganizationalUnit -Filter "DistinguishedName -eq '$ouDN'" -ErrorAction SilentlyContinue)) {
-        New-ADOrganizationalUnit -Name $Name -Path $ParentDN -ProtectedFromAccidentalDeletion $true
-        Write-Host "Created: $ouDN"
+        try {
+            New-ADOrganizationalUnit -Name $Name -Path $ParentDN -ProtectedFromAccidentalDeletion $true
+            Write-Host "Created: $ouDN" -ForegroundColor Green
+        }
+        catch {
+            Write-Host "ERROR creating $ouDN : $($_.Exception.Message)" -ForegroundColor Red
+            throw
+        }
     } else {
-        Write-Host "Exists:  $ouDN"
+        Write-Host "Exists:  $ouDN" -ForegroundColor Yellow
     }
 }
 
@@ -23,40 +29,55 @@ $sites = @("Manchester", "Liverpool", "Hull", "Leeds")
 $objects = @("Users", "Computers")
 $departments = @("Scanning", "Machining", "3DPrinting", "Office")
 
-# Create Head Office departments
+# Head Office departments
 $hoDepts = @("IT", "Finance", "Executive")
 
+Write-Host "Creating root level OUs..." -ForegroundColor Cyan
+
 # Create root level OUs
-New-CheckedOU -Name "All$objects[0]" -ParentDN $domain
-New-CheckedOU -Name "All$objects[1]" -ParentDN $domain
-New-CheckedOU -Name "Sites" -ParentDN "OU=All$objects[0],$domain"
-New-CheckedOU -Name "Sites" -ParentDN "OU=All$objects[1],$domain"
-New-CheckedOU -Name "HeadOffice" -ParentDN "OU=All$objects[0],$domain"
-New-CheckedOU -Name "HeadOffice" -ParentDN "OU=All$objects[1],$domain"
+foreach ($object in $objects) {
+    New-CheckedOU -Name "All$object" -ParentDN $domain
+}
+
 New-CheckedOU -Name "Groups" -ParentDN $domain
 New-CheckedOU -Name "ServiceAccounts" -ParentDN $domain
 New-CheckedOU -Name "Admin" -ParentDN $domain
 
+Write-Host "Creating Sites and HeadOffice containers..." -ForegroundColor Cyan
+
+# Create Sites and HeadOffice containers under each object type
+foreach ($object in $objects) {
+    $objectDN = "OU=All$object,$domain"
+    New-CheckedOU -Name "Sites" -ParentDN $objectDN
+    New-CheckedOU -Name "HeadOffice" -ParentDN $objectDN
+}
+
+Write-Host "Creating site-specific OUs..." -ForegroundColor Cyan
+
 # Create OUs under Sites
-foreach ($object in $objects)
-{
-    foreach ($site in $sites)
-    {
-        $siteDN = "OU=Sites,OU=All$object,$domain"
-        New-CheckedOU -Name $site -ParentDN $siteDN
+foreach ($object in $objects) {
+    $sitesDN = "OU=Sites,OU=All$object,$domain"
 
-        foreach ($dept in $departments)
-        {
-            $deptDN = "OU=$site,OU=Sites,OU=All$object,$domain"
-            New-CheckedOU -Name $dept -ParentDN $deptDN
+    foreach ($site in $sites) {
+        New-CheckedOU -Name $site -ParentDN $sitesDN
 
+        # Create departments under each site
+        $siteDN = "OU=$site,$sitesDN"
+        foreach ($dept in $departments) {
+            New-CheckedOU -Name $dept -ParentDN $siteDN
         }
     }
-    # Create HO OUs
-    $deptDN = "OU=HeadOffice,OU=All$object,$domain"
-    foreach ($dept in $hoDepts)
-    {
-        New-CheckedOU -Name $dept -ParentDN $deptDN
+}
+
+Write-Host "Creating Head Office departments..." -ForegroundColor Cyan
+
+# Create Head Office departments
+foreach ($object in $objects) {
+    $headOfficeDN = "OU=HeadOffice,OU=All$object,$domain"
+
+    foreach ($dept in $hoDepts) {
+        New-CheckedOU -Name $dept -ParentDN $headOfficeDN
     }
 }
+
 Write-Host "OU structure build completed successfully!" -ForegroundColor Green
