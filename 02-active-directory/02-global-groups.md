@@ -150,4 +150,4 @@ Future expansions may include:
 
 This structure provides a robust, scalable foundation for RBAC and GPO targeting across the organisation.
 
-[⬅️ Back to OU Structure](01-ou-structure) | [Next: Sample User Creation ➡️](../02-active-directory/03-sample-users)
+[⬅️ Back to OU Structure](01-ou-structure.md) | [Next: Sample User Creation ➡️](03-sample-users.md)

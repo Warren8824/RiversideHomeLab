@@ -157,4 +157,4 @@ Restart the server.
 
 ---
 
-[⬅️ Back to Lab Overview](../README.md) | [Next: AD Structure ➡️](../02-active-directory/01-ou-structure)
+[⬅️ Back to Lab Overview](../README.md) | [Next: AD Structure ➡️](../02-active-directory/01-ou-structure.md)
