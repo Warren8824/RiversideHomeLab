@@ -79,7 +79,7 @@ This environment is part of a personal upskilling initiative and is built to ref
 
 ---
 
-> Look at the complete step by step [build process](build-process.md).
+> Look at the complete step by step [build process](04-build-process).
 
 ## Real World Comparison
 
@@ -127,4 +127,4 @@ This mirrors many core concepts seen in production networks across SMEs and larg
 
 ---
 
-[⬅️ Back to Lab Overview](../README.md) | [Next: Hardware Specification ➡️](../01-infrastucture/hardware-specs.md)
+[⬅️ Back to Lab Overview](../README.md) | [Next: Hardware Specification ➡️](../01-infrastucture/02-hardware-specs)
