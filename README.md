@@ -17,7 +17,7 @@ Everything here has been built from scratch on personal hardware, and is meant t
 | Helpdesk Scenarios          | ⏳ Planned        | Realistic troubleshooting tasks         |
 | Mini-Projects               | ⏳ Planned        | Automation, security, monitoring        |
 
-![DC01](01-infrastucture/images/DC01.png)
+![DC01](01-infrastructure/images/DC01.png)
 
 ---
 
@@ -108,7 +108,7 @@ Improving troubleshooting and documentation skills
 The goal is to become more capable, resourceful, and confident in the areas I already work in — and to grow beyond that.
 
 ## ⚙️ Current Setup
-You can view the current network layout, addressing scheme, and server configurations in the [environment-setup.md](01-infrastucture/01-environment-setup.md) and related files.
+You can view the current network layout, addressing scheme, and server configurations in the [environment-setup.md](01-infrastructure/01-environment-setup.md) and related files.
 
 💡 I’ll keep this repository updated as I expand the lab and experiment with new configurations.
 

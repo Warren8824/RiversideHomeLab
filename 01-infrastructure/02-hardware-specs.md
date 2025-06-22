@@ -71,4 +71,4 @@ Dynamic disk size in Hyper V prevents full disk space being taken unless require
 
 ---
 
-[⬅️ Back to Environment Setup](../01-infrastucture/01-environment-setup.md) | [Next: IP Addressing Scheme ➡️](../01-infrastucture/03-ip-addressing-scheme.md)
+[⬅️ Back to Environment Setup](/01-environment-setup.md) | [Next: IP Addressing Scheme ➡️](/03-ip-addressing-scheme.md)
