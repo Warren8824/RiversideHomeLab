@@ -56,11 +56,11 @@ riverside-lab/
 |   |   ├── 05CreateDHCPScopes_DC01.ps1
 |   |   ├── 06CreateDNSZones_DC01.ps1
 |   |   └── 07RRASSetup_DC01.ps1                    
-│   ├── images/                                     
-│   ├── build-process.md                            # Step-by-step lab build guide
-│   ├── environment-setup.md                        # Full description of lab setup
-|   ├── hardware-specs.md                           # Lab host machine details
-│   ├── ip-addressing-scheme.md                     # IP/subnet breakdown
+│   ├── images/
+│   ├── 01-environment-setup.md                     # Full description of lab setup
+|   ├── 02-hardware-specs.md                        # Lab host machine details
+│   ├── 03-ip-addressing-scheme.md                  # IP/subnet breakdown                                
+│   ├── 04-build-process.md                         # Step-by-step lab build guide
 |   ├── Riverside Physical Topology.drawio.png      # Physical Diagram of what I intend the Lab to simulate
 │   └── Riverside Virtual Topology.drawio.png       # Visual Description of the Hyper V Setup used
 ├── 02-active-directory/                            # AD setup and scripts
@@ -69,9 +69,9 @@ riverside-lab/
 |   │   ├── 02CreateandNestGroups_DC01.ps1
 |   |   └── 03CreateSampleUsers_DC01.ps1   
 │   ├── images/
-│   ├── ou-structure.md                             # Full description of OU design
-│   ├── global-groups.md                            # Full Global Group Design
-│   └── sample-users.md                             # LLM generated user list
+│   ├── 01-ou-structure.md                          # Full description of OU design
+│   ├── 02-global-groups.md                         # Full Global Group Design
+│   └── 03-sample-users.md                          # User creation and placement plan
 ├── 03-group-policy/                                # GPO setup and screenshots
 │   ├── images/                            
 │   ├── gpo-inventory.md                            # TO DO
