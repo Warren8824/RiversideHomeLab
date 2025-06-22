@@ -137,12 +137,6 @@ A PowerShell script has been developed to:
 
 ![Groups Creation Script](images/CreateGroups.png)
 
-**EDIT** *You will need to add the G_All_Users group, as a member of Remote Desktop Users group which can be found un Builtin in AD Users and Computers*
-
-This is only required due to the clients all being hyper V VMs - requiring RDP activation for users to access.
-
-![Make all users Remote Desktop Users](images/RDPAllUsers.png)
-
 ---
 
 ![AD Group Structure](images/ADGroupStructure.png)
