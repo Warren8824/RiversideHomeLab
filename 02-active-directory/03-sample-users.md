@@ -1,4 +1,4 @@
-# Riverside Manufacturing - User List
+# Riverside Manufacturing - User Creation
 
  I have used LLM to create a list of 76 sample users to populate this AD structure in order to test the functionality and GPOs and different access levels, this can be found [here](sample_AD_users.csv)
 
