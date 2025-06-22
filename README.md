@@ -8,14 +8,14 @@ Everything here has been built from scratch on personal hardware, and is meant t
 
 ## 📊 Lab Progress Overview
 
-| Section                     | Status          | Details                                |
-|-----------------------------|-----------------|----------------------------------------|
-| Infrastructure Setup        | ✅ Complete     | Hyper-V, NAT, DC VM                    |
-| Active Directory Structure  | ✅ Complete  | OU design, security groups, sample users    |
-| Group Policies              | ⏳ Planned      | Inventory and baseline policies         |
-| File Server                 | ⏳ Planned      | Folder structure and permissions        |
-| Helpdesk Scenarios          | ⏳ Planned      | Realistic troubleshooting tasks         |
-| Mini-Projects               | ⏳ Planned      | Automation, security, monitoring        |
+| Section                     | Status           | Details                                |
+|-----------------------------|------------------|----------------------------------------|
+| Infrastructure Setup        | ✅ Complete       | Hyper-V, NAT, DC VM                    |
+| Active Directory Structure  | ✅ Complete       | OU design, security groups, sample users    |
+| Group Policies              | 🛠️ In Progress  | Inventory and baseline policies         |
+| File Server                 | ⏳ Planned        | Folder structure and permissions        |
+| Helpdesk Scenarios          | ⏳ Planned        | Realistic troubleshooting tasks         |
+| Mini-Projects               | ⏳ Planned        | Automation, security, monitoring        |
 
 ![DC01](01-infrastucture/images/DC01.png)
 
