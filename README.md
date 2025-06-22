@@ -44,11 +44,11 @@ This setup includes:
 ## 📁 Repository Structure
 
 ```plaintext
-riverside-lab/
+📁 riverside-lab/
 ├── README.md                                       # This file
-├── 01-infrastucture/                               # Hyper-V setup documentation
-│   ├── build-scripts/                              # PowerShell scripts used in building the system
-|   |   ├── 01ImportHyperVandCreateNATSwitchandConfigHostNIC_Host.ps1  
+├── 📁 01-infrastucture/                            # Hyper-V setup documentation
+│   ├── 📜 build-scripts/                           # PowerShell scripts used in building the system
+|   |   ├── 01ImportHyperVandCreate....ps1  
 |   |   ├── 02CreateDCVM_Host.ps1
 |   |   ├── 03DCNICConfig_DC01.ps1
 |   |   ├── 04aRenameandAddRoles_DC01.ps1
@@ -56,36 +56,38 @@ riverside-lab/
 |   |   ├── 05CreateDHCPScopes_DC01.ps1
 |   |   ├── 06CreateDNSZones_DC01.ps1
 |   |   └── 07RRASSetup_DC01.ps1                    
-│   ├── images/
+│   ├── 🖼️ images/
 │   ├── 01-environment-setup.md                     # Full description of lab setup
 |   ├── 02-hardware-specs.md                        # Lab host machine details
 │   ├── 03-ip-addressing-scheme.md                  # IP/subnet breakdown                                
 │   ├── 04-build-process.md                         # Step-by-step lab build guide
 |   ├── Riverside Physical Topology.drawio.png      # Physical Diagram of what I intend the Lab to simulate
 │   └── Riverside Virtual Topology.drawio.png       # Visual Description of the Hyper V Setup used
-├── 02-active-directory/                            # AD setup and scripts
-│   ├── build-scripts/
+├── 📁 02-active-directory/                         # AD setup and scripts
+│   ├── 📜 build-scripts/
 |   │   ├── 01CreateOUStructure_DC01.ps1
 |   │   ├── 02CreateandNestGroups_DC01.ps1
 |   |   └── 03CreateSampleUsers_DC01.ps1   
-│   ├── images/
+│   ├── 🖼️ images/
 │   ├── 01-ou-structure.md                          # Full description of OU design
 │   ├── 02-global-groups.md                         # Full Global Group Design
 │   └── 03-sample-users.md                          # User creation and placement plan
-├── 03-group-policy/                                # GPO setup and screenshots
-│   ├── images/                            
+├── 📁 03-group-policy/                             # GPO setup and screenshots
+│   ├── 📜 build-scripts/
+|   │   ├── 01CreateOUStructure_DC01.ps1
+│   ├── 🖼️ images/                            
 │   ├── gpo-inventory.md                            # TO DO
 │   └── security-baseline.md                        # TO DO
-├── 04-file-server/                                 # Shared folder setup
-│   ├── images/
+├── 📁 04-file-server/                              # Shared folder setup
+│   ├── 🖼️ images/
 │   ├── folder-structure.md                         # TO DO
 │   └── permissions-matrix.md                       # TO DO
-├── 05-helpdesk-scenarios/                          # Realistic learning scenarios
+├── 🆘 05-helpdesk-scenarios/                       # Realistic learning scenarios
 │   ├── password-reset.md                           # TO DO
 │   ├── account-unlock.md                           # TO DO
 │   ├── modified-access.md                          # TO DO
 │   └── group-management.md                         # TO DO
-└── 06-projects/                                    # Mini-projects
+└── 🚧 06-projects/                                 # Mini-projects
     ├── automated-onboarding/                       # TO DO
     ├── security-audit/                             # TO DO
     └── monitoring-setup/                           # TO DO
