@@ -71,7 +71,7 @@ These GPOs are sourced from Microsoft's [Security Compliance Toolkit](https://le
 
 ## Usability Adjustments (Lab-Specific)
 
-### Password Complexity - Edited in Default Domain Policy
+### Password Minimum Length - Edited in Default Domain Policy
 
 Increased minimum password legnth from 7 to 12 - using Computer Configuration > Policies > Windows Settings > Security Settings > Account Policies > Password Policy > Minimum Password Length
 
