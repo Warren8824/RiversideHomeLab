@@ -21,7 +21,7 @@ These GPOs are sourced from Microsoft's [Security Compliance Toolkit](https://le
 ## Domain-Level Security Policies
 
 ### 🟢 Default Domain Policy
-- Password length and complexity - Reduced minumum length to 12
+- Password length and complexity - increased to 12
 - Account lockout thresholds
 - Kerberos ticket lifetime configuration
 
@@ -71,7 +71,12 @@ These GPOs are sourced from Microsoft's [Security Compliance Toolkit](https://le
 
 ## Usability Adjustments (Lab-Specific)
 
-### UAC Prompt Behavior
+### Password Minimum Length - Edited in Default Domain Policy
+
+Increased minimum password legnth from 7 to 12 - using Computer Configuration > Policies > Windows Settings > Security Settings > Account Policies > Password Policy > Minimum Password Length
+
+### UAC Prompt Behavior - Edited in Windows 10 Computer Security GPO
+
 To allow administrative commands from a standard user session, the following setting has been applied:
 
 **Policy:**  
