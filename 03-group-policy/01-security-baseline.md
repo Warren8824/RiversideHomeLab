@@ -102,4 +102,4 @@ This enables `Run as administrator` to trigger a secure password prompt when a n
 
 ---
 
-[⬅️ Back to Lab Overview](../README.md) | [Next: GPO Inventory ➡️](02-gpo-inventory.md)
+[⬅️ Back to Lab Overview](../README.md) | [Next: GPO Inventory ➡️](02-gpo-inventory/README.md)
