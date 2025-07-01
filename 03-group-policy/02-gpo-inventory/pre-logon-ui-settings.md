@@ -19,10 +19,6 @@ The policy will enforce the following in Computer Configuration > Policies > Adm
 - Hide entry points for Fast User Switching                       - Enabled
 - Do not display the Getting Started welcome screen at logon      - Enabled
 - Always use custom logon background                              - Enabled
-- Removal of the default Windows hero image at login.             - Enabled
-- Blocking the display of the previously logged-in user.          - Enabled
-- Applying a customer Welcome title and usage policy.             - Enabled
-- Applying a standardised solid colour background.                - Enabled
 
 The policy will enforce the following in Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Security Options:
 
