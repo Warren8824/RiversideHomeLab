@@ -21,7 +21,6 @@ The policy will enforce the following in Computer Configuration > Policies > Adm
 - Always use custom logon background                              - Enabled
 - Removal of the default Windows hero image at login.             - Enabled
 - Blocking the display of the previously logged-in user.          - Enabled
-- Disabling the ability to change network connection pre-login.   - Enabled
 - Applying a customer Welcome title and usage policy.             - Enabled
 - Applying a standardised solid colour background.                - Enabled
 
