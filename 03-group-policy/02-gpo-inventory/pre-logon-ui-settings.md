@@ -1,4 +1,4 @@
-# GPO- Pre-logon UI Settings
+# Sec_Pre Logon UI Settings
 
 ---
 
