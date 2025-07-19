@@ -50,7 +50,6 @@ foreach ($user in $users) {
                 -AccountPassword $defaultPassword `
                 -Enabled $true `
                 -ChangePasswordAtLogon $true `
-                -AccountExpirationDate (Get-Date).AddDays(14)
 
             Write-Host "Created user $username in $ouLocation"
         }

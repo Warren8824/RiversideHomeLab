@@ -74,7 +74,6 @@ OU=3DPrinting,OU=Manchester,OU=Sites,OU=AllUsers,DC=riverside,DC=local
 
   * Enabled on creation
   * Password change required at next logon
-  * Account expiration set to 14 days from creation (for lab cleanup purposes)
 
 ---
 
@@ -124,7 +123,6 @@ The script can be found [here](build-scripts/03CreateSampleUsers_DC01.ps1)
 
 ## Notes & Recommendations
 
-* **Account Expiry**: Set to 14 days to support lab environment cleanup and user turnover.
 * **Password Policy**: Password is prompted once at script start for consistency.
 * **Group Nesting**: Follow and maintain proper AD group nesting for scalable access management.
 * **OU Structure**: Maintain consistent OU naming to reflect real-world organizational layout.
