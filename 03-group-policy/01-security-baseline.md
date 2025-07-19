@@ -58,7 +58,7 @@ These GPOs are sourced from Microsoft's [Security Compliance Toolkit](https://le
 ### 💽 BitLocker GPO
 - XTS-AES 256-bit encryption on OS drives
 - TPM required + PIN at startup
-- Auto-backup recovery keys to AD
+- Auto-backup recovery keys to AD - requires enabling in Computer Configuration > Policies > Administrative Templates > Windows Components > BitLocker Drive Encryption > Store Bitlocker recovery information in Active Directory
 - Drive encryption is enforced during provisioning
 
 ### 🛡️ Microsoft Defender Antivirus
