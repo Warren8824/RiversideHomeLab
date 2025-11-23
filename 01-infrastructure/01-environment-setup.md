@@ -127,4 +127,4 @@ This mirrors many core concepts seen in production networks across SMEs and larg
 
 ---
 
-[⬅️ Back to Lab Overview](../README.md) | [Next: Hardware Specification ➡️](../02-hardware-specs.md)
+[⬅️ Back to Lab Overview](../README.md) | [Next: Hardware Specification ➡️](02-hardware-specs.md)
